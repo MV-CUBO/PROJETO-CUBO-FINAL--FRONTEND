@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './access/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, NgbModule],
+  declarations: [AppComponent, LoginComponent],
+  imports: [BrowserModule, NgbModule, AppRoutingModule,],
   providers: [],
   bootstrap: [AppComponent],
 })
