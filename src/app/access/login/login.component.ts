@@ -25,7 +25,7 @@ export class LoginComponent {
     this.authService
       .login(this.form.get(['username'])?.value, this.form.get(['password'])?.value)
       .subscribe((response) => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       });
   }
 }
