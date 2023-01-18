@@ -5,11 +5,21 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './access/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthInterceptorProvider } from './access/auth/auth.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
-  imports: [BrowserModule, NgbModule, AppRoutingModule,],
-  providers: [],
+  imports: [
+    BrowserModule,
+    NgbModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
