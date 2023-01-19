@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth/auth.service';
-
+import { AuthService } from 'src/app/access/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  username!: string;
+  password!: string;
 
   form = new FormGroup({
     username: new FormControl(null, Validators.required),
@@ -17,15 +18,18 @@ export class LoginComponent {
   });
 
   constructor(private authService: AuthService, private router: Router) { }
-
-  submitForm() {
-    if (this.form.invalid) {
-      return;
-    }
-    this.authService
-      .login(this.form.get(['username'])?.value, this.form.get(['password'])?.value)
-      .subscribe((response) => {
-        this.router.navigate(['/home']);
+  login(username:string, password: string) {
+    this.authService.login(this.username, this.password)
+    .subscribe(response => {
+      if (response.hasOwnProperty('token')) {
+        localStorage.setItem('token', response.token);
+        const decodedToken = this.authService.getDecodedToken();
+          if (decodedToken.role === 'admin') {
+            this.router.navigate(['/admin']);
+          } else if (decodedToken.role === 'patient') {
+            this.router.navigate(['/patient']);
+          }
+        }
       });
   }
 }

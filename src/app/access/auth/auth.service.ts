@@ -1,42 +1,32 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { ApiService } from '../../api/api.service';
-import { UserModel } from './interface/User';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
-  private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
-  private readonly TOKEN_NAME = 'profanis_auth';
-  isLoggedIn$ = this._isLoggedIn$.asObservable();
-  user: UserModel | null;
+  private token: string = '';
 
-  get token(): any {
-    return localStorage.getItem(this.TOKEN_NAME);
+  constructor(private http: HttpClient, private router: Router) { }
+
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>('/api/login', { username, password });
   }
 
-  constructor(private apiService: ApiService) {
-    this._isLoggedIn$.next(!!this.token);
-    this.user = this.getUser(this.token);
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
   }
 
-  login(username: string , password: string) {
-    console.log(username, password)
-    return this.apiService.login(username, password).pipe(
-      tap((response: any) => {
-        this._isLoggedIn$.next(true);
-        localStorage.setItem(this.TOKEN_NAME, response.token);
-        this.user = this.getUser(response.token);
-      })
-    );
+  isAuthenticated() {
+    return localStorage.getItem('token') !== null;
   }
 
-  private getUser(token: string): UserModel | null {
-    if (!token) {
-      return null
-    }
-    return JSON.parse(window.btoa(token.split('.')[1])) as UserModel;
+  getDecodedToken(): any {
+
+    return jwtDecode(this.token);
   }
 }
