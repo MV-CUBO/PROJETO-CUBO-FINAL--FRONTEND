@@ -18,8 +18,8 @@ const routes: Routes = [
   {
     path: 'patient',
     component: PatientComponent,
-    canActivate: [AuthGuard],
-    data: { roles: ['patient'] }
+    // canActivate: [AuthGuard],
+    // data: { roles: ['patient'] }
   },
 ]
 

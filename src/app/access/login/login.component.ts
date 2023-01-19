@@ -12,11 +12,6 @@ export class LoginComponent {
   username!: string;
   password!: string;
 
-  form = new FormGroup({
-    username: new FormControl(null, Validators.required),
-    password: new FormControl(null, Validators.required),
-  });
-
   constructor(private authService: AuthService, private router: Router) { }
   login(username:string, password: string) {
     this.authService.login(this.username, this.password)
