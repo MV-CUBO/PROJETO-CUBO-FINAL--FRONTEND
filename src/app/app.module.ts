@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PepComponent } from './pep/pep.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
+    PepComponent,
   ],
   imports: [
     BrowserModule,
