@@ -1,4 +1,4 @@
-<p>register works!</p>
+<!-- <p>register works!</p> -->
 <mat-card>
     <mat-card-title>Cadastrar Colaborador</mat-card-title>
     <form>
@@ -9,15 +9,35 @@
             <input matInput placeholder="cpf" >
         </mat-form-field>
         <mat-form-field appearance="fill" >
-            <mat-label><span>cargo</span></mat-label>
+            <!-- <mat-label>cargo</mat-label> -->
             <mat-select>
             <mat-option *ngFor="let cargo of cargos" [value]="cargo.value">
             {{cargo.viewValue}}
             </mat-option>
         </mat-select>
         </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Endereço" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Data Nascimento" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Telefone" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Email" >
+        </mat-form-field>
         
     </form>
+
+    <button mat-raised-button color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button>
+        Cancelar
+    </button>
 </mat-card>
 
 
