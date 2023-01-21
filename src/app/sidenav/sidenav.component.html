@@ -1,4 +1,3 @@
-<ng-container >
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
   <div class="logo-container">
     <button class="logo" (click)="toggleCollapse()">MV</button>
@@ -8,7 +7,7 @@
     </button>
   </div>
   <ul class="sidenav-nav">
-    <ng-container *ngIf="isPatient()">
+    <ng-container>
       <li class="sidenav-nav-item" *ngFor="let data of navDataPatient">
         <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">
@@ -19,7 +18,7 @@
         </a>
       </li>
     </ng-container>
-    <ng-container *ngIf="isDoctor()" >
+    <!-- <ng-container *ngIf="isDoctor()" >
       <li class="sidenav-nav-item" *ngFor="let data of navDataDoctor">
         <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">
@@ -40,7 +39,16 @@
           </span>
         </a>
       </li>
-    </ng-container>
+    </ng-container> -->
+  <ng-container>
+    <li class="sidenav-nav-item">
+      <a (click)="logOut()" class="sidenav-nav-link">
+        <i class="sidenav-link-icon" [class]="buttonLogOut.icon"></i>
+        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+          {{buttonLogOut.label}}
+        </span>
+      </a>
+    </li>
+  </ng-container>
   </ul>
 </div>
-</ng-container>

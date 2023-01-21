@@ -1,7 +1,8 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../access/auth/auth.service';
-import { navbarDataPatient, navbarDataDoctor, navbarDataAdmin } from './nav-data';
+import { dataPatient, navbarDataDoctor, navbarDataAdmin } from './nav-data';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -44,11 +45,15 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  navDataPatient = navbarDataPatient;
-  navDataDoctor = navbarDataDoctor;
-  navDataAdmin = navbarDataAdmin;
+  navDataPatient = dataPatient;
+  buttonLogOut = {
+    icon: 'fal fa-power-off',
+    label: 'LogOut'
+  };
+  // navDataDoctor = navbarDataDoctor;
+  // navDataAdmin = navbarDataAdmin;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -90,6 +95,11 @@ export class SidenavComponent implements OnInit {
 
   isLoggedIn(){
     return this.authService.isAuthenticated();
+  }
+
+  logOut(){
+    this.authService.logout();
+    this.router.navigate(['login']);
   }
 
 }

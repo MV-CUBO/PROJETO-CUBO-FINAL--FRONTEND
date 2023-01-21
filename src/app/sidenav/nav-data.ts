@@ -1,15 +1,9 @@
-export const navbarDataPatient = [
+export const dataPatient = [
   {
-    routeLink: 'paciente',
+    routeLink: 'patient',
     icon: 'fal fa-clipboard',
     label: 'Prontuario'
-  },
-  {
-    routeLink: 'login',
-    icon: 'fal fa-power-off',
-    label: 'LogOut'
-  },
-
+  }
 ];
 
 export const navbarDataAdmin = [
