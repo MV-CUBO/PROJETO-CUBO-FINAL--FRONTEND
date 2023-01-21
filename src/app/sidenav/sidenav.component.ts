@@ -79,8 +79,8 @@ export class SidenavComponent implements OnInit {
   }
 
   isPatient() {
-    const decodedToken = this.authService.getDecodedToken();
-    return decodedToken.role === 'patient';
+    const isPatient = this.router.url.split('/').some((value) => value === 'patient' );
+    return isPatient
   }
 
   isDoctor() {
@@ -98,8 +98,7 @@ export class SidenavComponent implements OnInit {
   }
 
   logOut(){
-    this.authService.logout();
-    this.router.navigate(['login']);
+    return this.authService.logout();
   }
 
 }

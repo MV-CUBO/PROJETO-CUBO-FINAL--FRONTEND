@@ -7,7 +7,7 @@
     </button>
   </div>
   <ul class="sidenav-nav">
-    <ng-container>
+    <ng-container *ngIf="isPatient()">
       <li class="sidenav-nav-item" *ngFor="let data of navDataPatient">
         <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">

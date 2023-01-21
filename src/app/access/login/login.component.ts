@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl,  Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
 import { AuthService } from 'src/app/access/auth/auth.service';
 
 @Component({
@@ -20,17 +21,24 @@ export class LoginComponent {
         '';
   }
 
+  roleRedirection(token: any) {
+    switch (token) {
+      case 'admin':
+        this.router.navigate(['/admin']);
+        break;
+      case 'patient':
+        this.router.navigate([`/patient/${token.id}`]);
+        break;
+    }
+  }
+
   login() {
     this.authService.login(this.username.value!, this.password.value!)
-    .subscribe(response => {
-      if (response.hasOwnProperty('token')) {
-        localStorage.setItem('token', response.token);
-        const decodedToken = this.authService.getDecodedToken();
-          if (decodedToken.role === 'admin') {
-            this.router.navigate(['/admin']);
-          } else if (decodedToken.role === 'patient') {
-            this.router.navigate(['/patient']);
-          }
+      .subscribe(response => {
+        if (response.hasOwnProperty('token')) {
+          localStorage.setItem('token', response.token);
+          const decodedToken = this.authService.getDecodedToken();
+          this.roleRedirection(decodedToken);
         }
       });
   }

@@ -12,9 +12,9 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     //children:[ .../]
-    data: { roles: ['admin'] }
+    // data: { roles: ['admin'] }
   },
   {
     path: 'patient',
