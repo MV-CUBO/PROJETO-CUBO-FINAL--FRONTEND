@@ -1,6 +1,7 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
-import { navbarData } from './nav-data';
+import { AuthService } from '../access/auth/auth.service';
+import { navbarDataPatient, navbarDataDoctor, navbarDataAdmin } from './nav-data';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -43,7 +44,11 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  navData = navbarData;
+  navDataPatient = navbarDataPatient;
+  navDataDoctor = navbarDataDoctor;
+  navDataAdmin = navbarDataAdmin;
+
+  constructor(private authService: AuthService) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -67,4 +72,24 @@ export class SidenavComponent implements OnInit {
     this.collapsed = false;
     this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
   }
+
+  isPatient() {
+    const decodedToken = this.authService.getDecodedToken();
+    return decodedToken.role === 'patient';
+  }
+
+  isDoctor() {
+    const decodedToken = this.authService.getDecodedToken();
+    return decodedToken.role === 'doctor';
+  }
+
+  isAdmin() {
+    const decodedToken = this.authService.getDecodedToken();
+    return decodedToken.role === 'admin';
+  }
+
+  isLoggedIn(){
+    return this.authService.isAuthenticated();
+  }
+
 }

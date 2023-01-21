@@ -1,20 +1,46 @@
+<ng-container >
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
   <div class="logo-container">
     <button class="logo" (click)="toggleCollapse()">MV</button>
     <div class="logo-text" @fadeInOut *ngIf="collapsed">Cubo</div>
-    <button class="btn-close"  *ngIf="collapsed" (click)="closeSidenav()">
+    <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
       <i class="fal fa-times close-icon"></i>
     </button>
   </div>
   <ul class="sidenav-nav">
-    <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">
-        <i class="sidenav-link-icon" [class]="data.icon"></i>
-        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
-          {{data.label}}
-        </span>
-      </a>
-    </li>
+    <ng-container *ngIf="isPatient()">
+      <li class="sidenav-nav-item" *ngFor="let data of navDataPatient">
+        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{data.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="isDoctor()" >
+      <li class="sidenav-nav-item" *ngFor="let data of navDataDoctor">
+        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{data.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="isAdmin()" >
+      <li class="sidenav-nav-item" *ngFor="let data of navDataAdmin">
+        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{data.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container>
   </ul>
 </div>
+</ng-container>

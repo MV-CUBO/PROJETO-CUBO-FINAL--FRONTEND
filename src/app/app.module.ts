@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginModule } from './access/login/login.module';
+
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
