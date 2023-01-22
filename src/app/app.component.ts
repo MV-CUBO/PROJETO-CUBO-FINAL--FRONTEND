@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './access/auth/auth.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -16,8 +17,14 @@ export class AppComponent {
   isSideNavCollapsed = false;
   screenWidth = 0;
 
+  constructor(private authService:AuthService){}
+
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
+  }
+
+  isLoggedIn() {
+    return this.authService.isAuthenticated();
   }
 }
