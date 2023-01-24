@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginModule } from './access/login/login.module';
+
 import { RegisterComponent } from './register/register.component';
+
 
 import { MatCardModule } from  '@angular/material/card';
 import { FormsModule } from '@angular/forms'
@@ -16,6 +20,8 @@ import { MatInputModule } from '@angular/material/input'
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatButtonModule } from  '@angular/material/button';
+
+
 
 
 @NgModule({
@@ -30,6 +36,8 @@ import { MatButtonModule } from  '@angular/material/button';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
+    LoginModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,

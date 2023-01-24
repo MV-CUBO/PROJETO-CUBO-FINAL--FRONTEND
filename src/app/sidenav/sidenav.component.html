@@ -1,20 +1,57 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
   <div class="logo-container">
-    <button class="logo" (click)="toggleCollapse()">MV</button>
+    <button class="logo" (click)="toggleCollapse()">
+      <img src="../../assets/img/logo-white (1)_resized.png">
+    </button>
     <div class="logo-text" @fadeInOut *ngIf="collapsed">Cubo</div>
-    <button class="btn-close"  *ngIf="collapsed" (click)="closeSidenav()">
+    <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
       <i class="fal fa-times close-icon"></i>
     </button>
   </div>
   <ul class="sidenav-nav">
-    <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">
-        <i class="sidenav-link-icon" [class]="data.icon"></i>
-        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
-          {{data.label}}
-        </span>
-      </a>
-    </li>
+    <ng-container *ngIf="isPatient()">
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" [routerLink]="[navDataPatient.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon" [class]="navDataPatient.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{navDataPatient.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container>
+    <!-- <ng-container *ngIf="isDoctor()">
+      <li class="sidenav-nav-item" *ngFor="let data of navDataDoctor">
+        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{data.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container> -->
+    <ng-container *ngIf="isAdmin()">
+      <li class="sidenav-nav-item" *ngFor="let data of navDataAdmin">
+        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{data.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container>
+
+    <ng-container>
+      <li class="sidenav-nav-item">
+        <a (click)="logOut()" class="sidenav-nav-link">
+          <i class="sidenav-link-icon" [class]="buttonLogOut.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{buttonLogOut.label}}
+          </span>
+        </a>
+      </li>
+    </ng-container>
   </ul>
 </div>

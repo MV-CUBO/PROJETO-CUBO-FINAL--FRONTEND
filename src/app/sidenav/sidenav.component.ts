@@ -1,6 +1,8 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
-import { navbarData } from './nav-data';
+import { Router } from '@angular/router';
+import { AuthService } from '../access/auth/auth.service';
+import { navbarDataDoctor, navbarDataAdmin } from './nav-data';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -43,7 +45,23 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  navData = navbarData;
+  userId: string = '';
+  navDataPatient = {
+    routeLink: `patient/${this.userId}`,
+    icon: 'fal fa-clipboard',
+    label: 'Prontuario'
+  };
+
+  navDataAdmin = navbarDataAdmin;
+
+  buttonLogOut = {
+    icon: 'fal fa-power-off',
+    label: 'LogOut'
+  };
+
+  // navDataDoctor = navbarDataDoctor;
+
+  constructor(private authService: AuthService, private router: Router) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -55,7 +73,9 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const userInfo = this.authService.getDecodedToken()
     this.screenWidth = window.innerWidth;
+    this.userId = userInfo.id
   }
 
   toggleCollapse(): void {
@@ -67,4 +87,28 @@ export class SidenavComponent implements OnInit {
     this.collapsed = false;
     this.onToggleSideNav.emit({ collapsed: this.collapsed, screenWidth: this.screenWidth });
   }
+
+  isPatient() {
+    const isPatient = this.router.url.split('/').some((value) => value === 'patient');
+    return isPatient;
+  }
+
+  isDoctor() {
+    const isDoctor = this.router.url.split('/').some((value) => value === 'doctor');
+    return isDoctor;
+  }
+
+  isAdmin() {
+    const isAdmin = this.router.url.split('/').some((value) => value === 'admin');
+    return isAdmin;
+  }
+
+  isLoggedIn() {
+    return this.authService.isAuthenticated();
+  }
+
+  logOut() {
+    return this.authService.logout();
+  }
+
 }
