@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -12,8 +13,8 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    children: [{ path: 'dashboard', component: DashboardComponent}]
     // canActivate: [AuthGuard],
-    //children:[ .../]
     // data: { roles: ['admin'] }
   },
   {

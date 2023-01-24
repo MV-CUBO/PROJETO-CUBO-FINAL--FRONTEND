@@ -9,6 +9,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
+import { PepCreateComponent } from './pep/pep-create/pep-create.component';
 
 
 
@@ -18,6 +19,7 @@ import { LoginModule } from './access/login/login.module';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
+    PepCreateComponent,
   ],
   imports: [
     BrowserModule,
