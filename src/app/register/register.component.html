@@ -9,7 +9,7 @@
             <input matInput placeholder="cpf" >
         </mat-form-field>
         <mat-form-field appearance="fill" >
-            <!-- <mat-label>cargo</mat-label> -->
+            <mat-label>cargo</mat-label>
             <mat-select>
             <mat-option *ngFor="let cargo of cargos" [value]="cargo.value">
             {{cargo.viewValue}}
@@ -35,7 +35,7 @@
         Salvar
     </button>
     
-    <button mat-raised-button>
+    <button id="cancelButton" mat-raised-button>
         Cancelar
     </button>
 </mat-card>
