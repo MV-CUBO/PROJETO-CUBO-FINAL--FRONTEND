@@ -20,8 +20,10 @@
             <input matInput placeholder="Endereço" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Data Nascimento" >
-        </mat-form-field>
+            <input matInput [(ngModel)]="dataSelecionada" [matDatepicker]="picker" placeholder="Data de Nascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>          
         <mat-form-field>
             <input matInput placeholder="Telefone" >
         </mat-form-field>

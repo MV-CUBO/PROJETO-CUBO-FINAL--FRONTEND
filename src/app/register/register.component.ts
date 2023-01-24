@@ -5,12 +5,16 @@ interface Cargo {
   viewValue: string;
 }
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+
+    dataSelecionada: Date = new Date();
+  
 
   cargos: Cargo[] = [
     {value: 'doctor', viewValue: 'Médico(a)'},
