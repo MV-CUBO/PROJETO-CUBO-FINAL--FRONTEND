@@ -1,10 +1,4 @@
-export const dataPatient = [
-  {
-    routeLink: 'patient',
-    icon: 'fal fa-clipboard',
-    label: 'Prontuario'
-  }
-];
+
 
 export const navbarDataAdmin = [
   {
@@ -29,12 +23,6 @@ export const navbarDataAdmin = [
     icon: 'fal fa-history',
     label: 'Log'
   },
-  {
-    routeLink: 'paciente',
-    icon: 'fal fa-power-off',
-    label: 'LogOut'
-  },
-
 ];
 
 export const navbarDataDoctor = [

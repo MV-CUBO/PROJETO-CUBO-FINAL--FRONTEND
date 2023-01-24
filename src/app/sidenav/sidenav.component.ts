@@ -2,7 +2,7 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../access/auth/auth.service';
-import { dataPatient, navbarDataDoctor, navbarDataAdmin } from './nav-data';
+import { navbarDataDoctor, navbarDataAdmin } from './nav-data';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -45,13 +45,21 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  navDataPatient = dataPatient;
+  userId: string = '';
+  navDataPatient = {
+    routeLink: `patient/${this.userId}`,
+    icon: 'fal fa-clipboard',
+    label: 'Prontuario'
+  };
+
+  navDataAdmin = navbarDataAdmin;
+
   buttonLogOut = {
     icon: 'fal fa-power-off',
     label: 'LogOut'
   };
+
   // navDataDoctor = navbarDataDoctor;
-  // navDataAdmin = navbarDataAdmin;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -65,7 +73,9 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const userInfo = this.authService.getDecodedToken()
     this.screenWidth = window.innerWidth;
+    this.userId = userInfo.id
   }
 
   toggleCollapse(): void {
@@ -79,25 +89,25 @@ export class SidenavComponent implements OnInit {
   }
 
   isPatient() {
-    const isPatient = this.router.url.split('/').some((value) => value === 'patient' );
-    return isPatient
+    const isPatient = this.router.url.split('/').some((value) => value === 'patient');
+    return isPatient;
   }
 
   isDoctor() {
-    const decodedToken = this.authService.getDecodedToken();
-    return decodedToken.role === 'doctor';
+    const isDoctor = this.router.url.split('/').some((value) => value === 'doctor');
+    return isDoctor;
   }
 
   isAdmin() {
-    const decodedToken = this.authService.getDecodedToken();
-    return decodedToken.role === 'admin';
+    const isAdmin = this.router.url.split('/').some((value) => value === 'admin');
+    return isAdmin;
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     return this.authService.isAuthenticated();
   }
 
-  logOut(){
+  logOut() {
     return this.authService.logout();
   }
 
