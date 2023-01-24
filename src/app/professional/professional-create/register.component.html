@@ -6,10 +6,10 @@
             <input matInput placeholder="Nome" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="cpf" >
+            <input matInput placeholder="CPF" >
         </mat-form-field>
         <mat-form-field appearance="fill" >
-            <mat-label>cargo</mat-label>
+            <mat-label>Cargo</mat-label>
             <mat-select>
             <mat-option *ngFor="let cargo of cargos" [value]="cargo.value">
             {{cargo.viewValue}}
@@ -28,8 +28,11 @@
             <input matInput placeholder="Telefone" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Email" >
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </mat-form-field>
+        
+        
         
     </form>
 

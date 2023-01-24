@@ -6,6 +6,8 @@ interface Cargo {
 }
 
 
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,8 +15,10 @@ interface Cargo {
 })
 export class RegisterComponent {
 
-    dataSelecionada: Date = new Date();
-  
+  dataSelecionada: Date = new Date();
+  email!: string;
+    
+
 
   cargos: Cargo[] = [
     {value: 'doctor', viewValue: 'Médico(a)'},

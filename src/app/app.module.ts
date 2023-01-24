@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
 
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './professional/professional-create/register.component';
 
 
 import { MatCardModule } from  '@angular/material/card';
