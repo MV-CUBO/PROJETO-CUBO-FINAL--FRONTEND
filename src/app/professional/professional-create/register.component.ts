@@ -5,6 +5,17 @@ interface Cargo {
   viewValue: string;
 }
 
+interface Genero {
+  value: string;
+  viewValue: string;
+}
+
+interface EstadoCivil{
+  value: string;
+  viewValue: string;
+}
+
+
 
 
 
@@ -23,6 +34,18 @@ export class RegisterComponent {
   cargos: Cargo[] = [
     {value: 'doctor', viewValue: 'Médico(a)'},
     {value: 'nurse', viewValue: 'Enfermeiro(a)'},
+  ];
+
+  generos: Genero[] = [
+    {value: 'masculine', viewValue: 'Masculino'},
+    {value: 'feminine', viewValue: 'Feminino'},
+  ];
+
+  estadoCivil: EstadoCivil[] = [
+    {value: 'not married', viewValue: 'Solteiro(a)'},
+    {value: 'married', viewValue: 'Casado(a)'},
+    {value: 'widower', viewValue: 'Viuvo(a)'},
+    {value: 'divorced', viewValue: 'Divorciado(a)'},
   ];
 
 }

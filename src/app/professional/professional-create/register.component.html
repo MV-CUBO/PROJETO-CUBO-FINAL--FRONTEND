@@ -17,7 +17,10 @@
         </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Endereço" >
+            <input matInput placeholder="CRM" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Especialidade" >
         </mat-form-field>
         <mat-form-field>
             <input matInput [(ngModel)]="dataSelecionada" [matDatepicker]="picker" placeholder="Data de Nascimento">
@@ -31,8 +34,44 @@
             <mat-label>Email</mat-label>
             <input matInput [(ngModel)]="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </mat-form-field>
-        
-        
+        <mat-form-field appearance="fill" >
+            <mat-label>Genero</mat-label>
+            <mat-select>
+            <mat-option *ngFor="let genero of generos" [value]="genero.value">
+            {{genero.viewValue}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" >
+            <mat-label>Estado Civil</mat-label>
+            <mat-select>
+            <mat-option *ngFor="let estadoCivil of estadoCivil" [value]="estadoCivil.value">
+            {{estadoCivil.viewValue}}
+            </mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CEP" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Rua" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Bairro" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cidade" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Estado" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Complemento" >
+        </mat-form-field>
+
         
     </form>
 
