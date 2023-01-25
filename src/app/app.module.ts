@@ -15,6 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
+import { ChartComponent } from './chartPacientes/chart.component';
+import { ChartMedicoComponent } from './chartMedicos/chart-medico.component';
+import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 
 
 
@@ -23,6 +26,9 @@ import { LoginModule } from './access/login/login.module';
     AppComponent,
     BodyComponent,
     SidenavComponent,
+    DashboardComponent,
+    ChartComponent,
+    ChartMedicoComponent,
     DashboardComponent,
   ],
   imports: [
@@ -36,9 +42,15 @@ import { LoginModule } from './access/login/login.module';
     MatButtonModule,
     LayoutModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    NgChartsModule,
+    
+
   ],
-  providers: [],
+  providers: [
+      { provide: NgChartsConfiguration, useValue: { generateColors: false }}
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
