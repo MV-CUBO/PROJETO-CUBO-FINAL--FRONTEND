@@ -5,12 +5,12 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
-import { RegisterComponent } from './professional/professional-create/register.component'
+import { ProfessionalComponent } from './professional/professional-create/professional.component'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'register', component: RegisterComponent },
+  { path: 'create-professional', component: ProfessionalComponent },
   {
     path: 'admin',
     component: AdminComponent,

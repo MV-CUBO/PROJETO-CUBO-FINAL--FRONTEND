@@ -20,14 +20,15 @@ interface EstadoCivil{
 
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-professional',
+  templateUrl: './professional.component.html',
+  styleUrls: ['./professional.component.scss']
 })
-export class RegisterComponent {
+export class ProfessionalComponent {
 
   dataSelecionada: Date = new Date();
   email!: string;
+  nome!: string;
     
 
 

@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
 
-import { RegisterComponent } from './professional/professional-create/register.component';
+import { ProfessionalComponent } from './professional/professional-create/professional.component';
 
 
 import { MatCardModule } from  '@angular/material/card';
@@ -31,7 +31,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
-    RegisterComponent,
+    ProfessionalComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,13 @@
     <mat-card-title>Cadastrar Colaborador</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome" >
+            <input matInput placeholder="Nome*" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CPF" >
+            <input matInput placeholder="CPF*" required>
         </mat-form-field>
         <mat-form-field appearance="fill" >
-            <mat-label>Cargo</mat-label>
+            <mat-label>Cargo*</mat-label>
             <mat-select>
             <mat-option *ngFor="let cargo of cargos" [value]="cargo.value">
             {{cargo.viewValue}}
@@ -17,25 +17,25 @@
         </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CRM" >
+            <input matInput placeholder="CRM*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Especialidade" >
+            <input matInput placeholder="Especialidade*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput [(ngModel)]="dataSelecionada" [matDatepicker]="picker" placeholder="Data de Nascimento">
+            <input matInput [(ngModel)]="dataSelecionada" [matDatepicker]="picker" placeholder="Data de Nascimento*">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>          
         <mat-form-field>
-            <input matInput placeholder="Telefone" >
+            <input matInput placeholder="Telefone*" required>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput [(ngModel)]="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </mat-form-field>
         <mat-form-field appearance="fill" >
-            <mat-label>Genero</mat-label>
+            <mat-label>Genero*</mat-label>
             <mat-select>
             <mat-option *ngFor="let genero of generos" [value]="genero.value">
             {{genero.viewValue}}
@@ -43,7 +43,7 @@
         </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill" >
-            <mat-label>Estado Civil</mat-label>
+            <mat-label>Estado Civil*</mat-label>
             <mat-select>
             <mat-option *ngFor="let estadoCivil of estadoCivil" [value]="estadoCivil.value">
             {{estadoCivil.viewValue}}
@@ -51,34 +51,32 @@
         </mat-select>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CEP" >
+            <input matInput placeholder="CEP*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Rua" >
+            <input matInput placeholder="Rua*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Número" >
+            <input matInput placeholder="Número*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Bairro" >
+            <input matInput placeholder="Bairro*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Cidade" >
+            <input matInput placeholder="Cidade*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Estado" >
+            <input matInput placeholder="Estado*" >
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Complemento" >
+            <input matInput placeholder="Complemento*" >
         </mat-form-field>
-
-        
+    
     </form>
 
     <button mat-raised-button color="primary">
         Salvar
     </button>
-    
     <button id="cancelButton" mat-raised-button>
         Cancelar
     </button>
