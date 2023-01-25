@@ -74,10 +74,10 @@
     
     </form>
 
-    <button mat-raised-button color="primary">
+    <button mat-raised-button (click)="createProfessional()" color="primary">
         Salvar
     </button>
-    <button id="cancelButton" mat-raised-button>
+    <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
 </mat-card>

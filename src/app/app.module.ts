@@ -1,3 +1,4 @@
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,7 +47,8 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     MatSelectModule,
     MatDatepickerModule,
     MatButtonModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },

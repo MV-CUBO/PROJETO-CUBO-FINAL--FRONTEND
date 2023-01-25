@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ProfessionalService } from '../professional.service'
+
 
 interface Cargo {
   value: string;
@@ -17,14 +20,26 @@ interface EstadoCivil{
 
 
 
-
-
 @Component({
   selector: 'app-professional',
   templateUrl: './professional.component.html',
   styleUrls: ['./professional.component.scss']
 })
+
 export class ProfessionalComponent {
+  // ngOnInit(): void {
+  // }
+
+  constructor(private professionalService: ProfessionalService,
+    private router: Router) {}
+
+  createProfessional(): void {
+    this.professionalService.showMessage("Cadastrado com sucesso!");
+  }
+
+  cancel(): void {
+    this.router.navigate(['/login'])
+  }
 
   dataSelecionada: Date = new Date();
   email!: string;
