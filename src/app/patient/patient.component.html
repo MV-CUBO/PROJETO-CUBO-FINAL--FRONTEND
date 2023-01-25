@@ -1,10 +1,29 @@
-<h1>Client Side!</h1>
+<mat-form-field appearance="fill">
+  <mat-label>Cartão do seguro saúde:</mat-label>
+</mat-form-field>
 
-<h1>Dashboard</h1>
-<div class="card">
-  <div class="card-head">Lorem ipsum - dashboard</div>
-  <div class="card-body">
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas ducimus soluta, quasi aut ipsa non, ullam enim rem
-    repudiandae, vitae provident animi. Inventore rerum, voluptas optio dignissimos blanditiis modi illo!
-  </div>
-</div>
+<mat-form-field appearance="fill">
+  <mat-label>Tipo sanguíneo:</mat-label>
+  <mat-select>
+  <mat-option value="A+">A+</mat-option>
+  <mat-option value="B+">B+</mat-option>
+  <mat-option value="AB+">AB+</mat-option>
+  <mat-option value="O+">O+</mat-option>
+  <mat-option value="A-">A-</mat-option>
+  <mat-option value="B-">B-</mat-option>
+  <mat-option value="AB-">AB-</mat-option>
+  <mat-option value="O-">O-</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Observação:</mat-label>
+<textarea matInput></textarea>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Status:</mat-label>
+<textarea matInput>Status</textarea>
+</mat-form-field>
+
+<button mat-button color="primary">Ver meu prontuário</button>

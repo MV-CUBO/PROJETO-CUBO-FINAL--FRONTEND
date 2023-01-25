@@ -5,7 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
-import { PepComponent } from './pep/pep.component';
+import { PepComponent } from './pep/app.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

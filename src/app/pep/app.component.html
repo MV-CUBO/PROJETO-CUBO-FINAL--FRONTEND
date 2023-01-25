@@ -1,0 +1,41 @@
+
+<h5 class="card-title"><strong>Histórico Médico</strong></h5>
+
+<p>Paciente</p>
+  <br />
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Identificação do paciente:
+    <input matInput>
+    <input type="textarea" class="form-control" name="Identificação do paciente" [(ngModel)]="pep.patient_id"
+      #patient_id>
+    </mat-label>
+
+
+  <mat-form-field appearance="fill">
+      <mat-label>Identificação do médico:
+      <input matInput>
+      <input type="textarea" class="form-control" name="Identificação do medico" [(ngModel)]="pep.doctor_id" #doctor_id>
+      </mat-label>
+
+
+  <mat-form-field>
+        <mat-label>Status:</mat-label>
+        <input type="textarea" class="form-control" name="status do paciente" [(ngModel)]="pep.status" #status>
+  </mat-form-field>
+      
+
+  <mat-form-field>
+    <mat-label>Observação:</mat-label>
+    <input type="textarea" class="form-control" name="perscrição medica" [(ngModel)]="pep.prescription"
+          #prescription>
+  </mat-form-field>
+
+
+  <section>
+    <button mat-button color="primary">Editar</button>
+    
+    <button mat-button color="primary">Concluir</button>
+  </section>
+
