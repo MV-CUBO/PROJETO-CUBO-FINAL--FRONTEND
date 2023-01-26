@@ -7,10 +7,12 @@ import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PepComponent } from './pep/pep.component';
+import { PepCreateComponent } from './pep/pep-create/pep-create.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'createpep', component: PepCreateComponent },
   {
     path: 'admin',
     component: AdminComponent,

@@ -19,7 +19,6 @@ import { PepModule } from './pep/pep.module';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
-    PepCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +27,7 @@ import { PepModule } from './pep/pep.module';
     HttpClientModule,
     LoginModule,
     PepModule
+
 
   ],
   providers: [],
