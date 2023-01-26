@@ -1,10 +1,11 @@
 export interface Professional {
     id?: number
     name: string
-    cpf: Date
+    cpf: string
     dateOfBirth: Date
     phone: string
     email: string
+    password: string
     gender: string
     maritalStatus: string
     crm: string

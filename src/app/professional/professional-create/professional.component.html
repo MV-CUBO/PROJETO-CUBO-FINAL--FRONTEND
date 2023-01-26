@@ -1,16 +1,16 @@
 <!-- <p>register works!</p> -->
 <mat-card>
     <mat-card-title>Cadastrar Colaborador</mat-card-title>
-    <form>
+    <form [formGroup]="formCadastro">
         <mat-form-field>
-            <input matInput placeholder="Nome*" required>
+            <input matInput placeholder="Nome*" formControlName="name">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CPF*" required>
+            <input matInput placeholder="CPF*" formControlName="cpf">
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Cargo*</mat-label>
-            <mat-select>
+            <mat-select >
             <mat-option *ngFor="let cargo of cargos" [value]="cargo.value">
             {{cargo.viewValue}}
             </mat-option>
@@ -33,6 +33,12 @@
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput [(ngModel)]="email" name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" matInput placeholder="Senha" >
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" matInput placeholder="Confirmar Senha" >
         </mat-form-field>
         <mat-form-field appearance="fill" >
             <mat-label>Genero*</mat-label>

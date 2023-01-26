@@ -23,6 +23,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatButtonModule } from  '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -50,6 +52,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     MatButtonModule,
     MatNativeDateModule,
     MatSnackBarModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
