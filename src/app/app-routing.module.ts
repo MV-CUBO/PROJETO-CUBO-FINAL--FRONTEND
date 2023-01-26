@@ -6,16 +6,13 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ChartComponent } from './chartPacientes/chart.component';
-import { ChartMedicoComponent } from './chartMedicos/chart-medico.component';
+
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'graficoPaciente', component: ChartComponent},
-  { path: 'graficoMedico', component: ChartMedicoComponent},
   {
     path: 'admin',
     component: AdminComponent,

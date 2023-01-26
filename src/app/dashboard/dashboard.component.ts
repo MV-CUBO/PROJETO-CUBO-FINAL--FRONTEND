@@ -1,18 +1,52 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
+import { Chart } from 'chart.js/dist';
+import { map } from 'rxjs';
+import { DashboardService } from './dashboard-service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.scss' ]
+  styleUrls: [ './dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent  implements OnInit{
+  genderMale:number = 20;
+  genderFemale:number = 25;
+  statusConsultation: number = 1
+  constructor(private dashboardservice: DashboardService) {
+
+    
+  }
+  ngOnInit(): void {
+
+      this.dashboardservice.FindByGender("MALE").subscribe(male => {
+      this.genderMale = male
+      })
+
+      this.dashboardservice.FindByGender("FEMALE").subscribe(female => {
+        this.genderFemale = female
+      })
+
+      this.dashboardservice.FindByStatusPep("CONSULTATION").subscribe(consultation => {
+        this.statusConsultation = consultation
+      })
+  
+    
+  }
+  
+
   // Doughnut
   public personChartLabels: string[] = [ 'Masculino', 'Feminino', ];
   public personChartData: ChartData<'doughnut'> = {
     labels: this.personChartLabels,
+    
     datasets: [
-      { data: [ 350, 450,]},
+      { data: [ this.genderMale, this.genderFemale],
+        backgroundColor:[
+          '#284865',
+          '#457eb3'
+        ]},
     ]
   };
   public personChartType: ChartType = 'doughnut';
@@ -30,9 +64,14 @@ export class DashboardComponent {
     public medicoChartData: ChartData<'doughnut'> = {
       labels: this.medicoChartLabels,
       datasets: [
-        { data: [ 350, 450,]},
+        { data: [ this.statusConsultation, 450],
+          backgroundColor:[
+            '#284865',
+            '#457eb3'
+          ]},
       ]
     };
+   
     public medicoChartType: ChartType = 'doughnut';
   
     // events
@@ -45,3 +84,7 @@ export class DashboardComponent {
     }
 }
   
+function FindByGendMale() {
+  throw new Error('Function not implemented.');
+}
+

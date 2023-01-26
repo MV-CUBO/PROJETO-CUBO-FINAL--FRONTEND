@@ -3,22 +3,35 @@ mat-card-title{
 }
 
 canvas {
-  position: absolute;
+
   align-items: center;
   left: 15px;
   right: 15px;
+  
 }
 
 .grid-container {
   margin: 20px;
+  background-color: antiquewhite;
+  display: grid;
+  max-width: 100%;
+
+}
+.container{
+  display: flex;
+  
 }
 
+
 .dashboard-card {
-  position: absolute;
+  position:relative;
   top: 15px;
   left: 15px;
   right: 15px;
   bottom: 15px;
+  max-width: 280px;
+  margin-left: 50px;
+  
 }
 
 .more-button {
@@ -30,3 +43,4 @@ canvas {
 .dashboard-card-content {
   text-align: center;
 }
+

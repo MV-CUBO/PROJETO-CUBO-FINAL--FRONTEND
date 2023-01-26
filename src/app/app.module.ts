@@ -15,8 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
-import { ChartComponent } from './chartPacientes/chart.component';
-import { ChartMedicoComponent } from './chartMedicos/chart-medico.component';
 import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 
 
@@ -27,8 +25,6 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
-    ChartComponent,
-    ChartMedicoComponent,
     DashboardComponent,
   ],
   imports: [
