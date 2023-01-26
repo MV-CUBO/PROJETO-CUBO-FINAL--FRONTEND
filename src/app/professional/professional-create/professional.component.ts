@@ -3,10 +3,7 @@ import { Router, withHashLocation } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-
-
-
+import { UserProfessional } from '../userProfessional.model';
 
 interface Cargo {
   value: string;
@@ -58,23 +55,28 @@ export class ProfessionalComponent implements OnInit{
   }
 
   professional: Professional = {
-    name: 'Angelo',
-    cpf: "12345678910",
+    name: '',
+    cpf: "",
     dateOfBirth: new Date(),
-    phone: '81998744854',
-    email: 'dsa',
-    password: "sad",
-    gender: 'dsa',
-    maritalStatus: 'dsa',
-    crm: 'dsa',
-    specialty: 'dsa',
-    zipcode: 'das',
-    street: 'das',
-    number: 'dsa',
-    district: 'asd',
-    city: 'dsad',
-    state: 'das',
-    complements: 'sda'
+    phone: '',
+    email: '',
+    password: "",
+    gender: '',
+    maritalStatus: '',
+    crm: '',
+    specialty: '',
+    zipcode: '',
+    street: '',
+    number: '',
+    district: '',
+    city: '',
+    state: '',
+    complements: ''
+  }
+
+  user: UserProfessional = {
+    username: '',
+    password: ''
   }
 
   constructor(private professionalService: ProfessionalService,
@@ -82,9 +84,11 @@ export class ProfessionalComponent implements OnInit{
 
   createProfessional(): void {
     this.professionalService.create(this.professional);
+    this.professionalService.createUser(this.user)
     this.professionalService.showMessage("Cadastrado com sucesso!");
     console.log(this.professional);
   }
+
 
   cancel(): void {
     this.router.navigate(['/login'])
