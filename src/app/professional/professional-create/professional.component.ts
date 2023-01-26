@@ -2,7 +2,9 @@ import { Professional } from './../professional.model';
 import { Router, withHashLocation } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional.service'
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
 
 
 
@@ -34,24 +36,24 @@ export class ProfessionalComponent implements OnInit{
 
   ngOnInit(): void {
     this.formCadastro = this.formBuilder.group({
-    name: [''],
-    cpf: [''],
-    dateOfBirth: [''],
-    phone: [''],
-    email: [''],
-    password: [''],
-    confirmPassword: [''],
-    gender: [''],
-    maritalStatus: [''],
-    crm: [''],
-    specialty: [''],
-    zipcode: [''],
-    street: [''],
-    number: [''],
-    district: [''],
-    city: [''],
-    state: [''],
-    complements: ['']
+    name: ['', [Validators.required]],
+    cpf: ['', [Validators.required]],
+    dateOfBirth: ['', [Validators.required]],
+    phone: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+    gender: ['',[Validators.required]],
+    maritalStatus: ['', [Validators.required]],
+    crm: ['', [Validators.required]],
+    specialty: ['', [Validators.required]],
+    zipcode: ['', [Validators.required]],
+    street: ['', [Validators.required]],
+    number: ['', [Validators.required]],
+    district: ['', [Validators.required]],
+    city: ['', [Validators.required]],
+    state: ['', [Validators.required]],
+    complements: ['', [Validators.required]]
     });
   }
 
@@ -89,7 +91,6 @@ export class ProfessionalComponent implements OnInit{
   }
 
   dataSelecionada: Date = new Date();
-  email!: string;
   nome!: string;
     
 
