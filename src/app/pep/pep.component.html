@@ -1,0 +1,67 @@
+<h1>
+  <b>
+    Prontuario:
+  </b>
+</h1>
+
+<div class="card">
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Nª Prontuario</mat-label>
+        <input matInput [value]="[pep.pepNumber]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Nª Paciente</mat-label>
+        <input matInput [value]="[pep.patientId]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Nª Doutor</mat-label>
+        <input matInput [value]="[pep.doctorId]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <mat-form-field class='input-full-width' appearance="fill">
+        <mat-label>Prescrição</mat-label>
+        <input matInput [value]="[pep.prescription]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Status</mat-label>
+        <input matInput [value]="[pep.status]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Tipo sanguinio</mat-label>
+        <input matInput [value]="[pep.bloodType]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Alergia</mat-label>
+        <input matInput [value]="[pep.allergies]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Criado em</mat-label>
+        <input matInput [value]="[pep.createdAt]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1">
+      <mat-form-field class="input-full-width" appearance="fill">
+        <mat-label>Atualizado em</mat-label>
+        <input matInput [value]="[pep.updateAt]" readonly>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>

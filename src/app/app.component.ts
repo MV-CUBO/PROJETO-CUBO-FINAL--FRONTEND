@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from './access/auth/auth.service';
 
 interface SideNavToggle {
@@ -17,14 +18,15 @@ export class AppComponent {
   isSideNavCollapsed = false;
   screenWidth = 0;
 
-  constructor(private authService:AuthService){}
+  constructor(private router: Router){}
 
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
   }
 
-  isLoggedIn() {
-    return this.authService.isAuthenticated();
+  isLoginPage() {
+    const isLoginPage = this.router.url.split('/').some((value) => value === 'login');
+    return isLoginPage;
   }
 }

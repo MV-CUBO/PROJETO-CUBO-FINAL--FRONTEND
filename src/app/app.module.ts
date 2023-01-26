@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
 import { PepCreateComponent } from './pep/pep-create/pep-create.component';
-
+import { PepModule } from './pep/pep.module';
 
 
 @NgModule({
@@ -26,7 +26,9 @@ import { PepCreateComponent } from './pep/pep-create/pep-create.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    PepModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
