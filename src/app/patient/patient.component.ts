@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 export interface Address {
-  id?: number
+  id?: string
   zipcode: string
   street: string
   number: string
@@ -12,14 +12,13 @@ export interface Address {
 }
 
 export interface Patient {
-  id?: number
+  id?: string
   name: string
   cpf: string
   address: Address
   dateOfBirth: Date
   phone: string
   email: string
-  password: string
   gender: string
   maritalStatus: string
   insuranceCompany: string
@@ -30,6 +29,7 @@ export interface Patient {
 export interface UserPatient {
   username: string
   password: string
+  role: string
 }
 
 @Component({

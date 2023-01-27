@@ -17,9 +17,6 @@ import { PatientModule } from './patient/patient.module';
 import { ProfessionalModule } from './professional/professional.module';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

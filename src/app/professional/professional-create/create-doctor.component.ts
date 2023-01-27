@@ -1,34 +1,18 @@
-import { Professional } from './../professional.model';
+import { EstadoCivil, Genero, Professional } from './../professional.model';
 import { Router, withHashLocation } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserProfessional } from '../professional.model';
 
-interface Cargo {
-  value: string;
-  viewValue: string;
-}
-
-interface Genero {
-  value: string;
-  viewValue: string;
-}
-
-interface EstadoCivil{
-  value: string;
-  viewValue: string;
-}
-
-
 
 @Component({
   selector: 'app-professional',
-  templateUrl: './professional.component.html',
-  styleUrls: ['./professional.component.scss']
+  templateUrl: './create-doctor.component.html',
+  styleUrls: ['./create-doctor.component.scss']
 })
 
-export class ProfessionalComponent implements OnInit{
+export class CreateDoctorComponent implements OnInit{
   formCadastro!: FormGroup;
 
   ngOnInit(): void {
@@ -57,6 +41,15 @@ export class ProfessionalComponent implements OnInit{
   professional: Professional = {
     name: '',
     cpf: "",
+    address: {
+      zipcode: '',
+      street: '',
+      number: '',
+      district: '',
+      city: '',
+      state: '',
+      complements: ''
+    },
     dateOfBirth: new Date(),
     phone: '',
     email: '',
@@ -64,14 +57,7 @@ export class ProfessionalComponent implements OnInit{
     gender: '',
     maritalStatus: '',
     crm: '',
-    specialty: '',
-    zipcode: '',
-    street: '',
-    number: '',
-    district: '',
-    city: '',
-    state: '',
-    complements: ''
+    specialty: ''
   }
 
   user: UserProfessional = {
@@ -97,12 +83,6 @@ export class ProfessionalComponent implements OnInit{
   dataSelecionada: Date = new Date();
   nome!: string;
     
-  
-
-  cargos: Cargo[] = [
-    {value: 'doctor', viewValue: 'Médico(a)'},
-    {value: 'nurse', viewValue: 'Enfermeiro(a)'},
-  ];
 
   generos: Genero[] = [
     {value: 'MALE', viewValue: 'Masculino'},

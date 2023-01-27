@@ -69,37 +69,37 @@
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="CEP" formControlName="zipcode"
-            [(ngModel)]="professional.zipcode">
+            [(ngModel)]="professional.address.zipcode">
             <mat-error *ngIf="formCadastro.get('zipcode')?.errors?.['required'] && formCadastro.get('zipcode')?.touched">CEP Obrigatório</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Rua*" formControlName="street"
-            [(ngModel)]="professional.street">
+            [(ngModel)]="professional.address.street">
             <mat-error *ngIf="formCadastro.get('email')?.errors?.['required'] && formCadastro.get('email')?.touched">Especialidade Obrigatória</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Número*" formControlName="number"
-            [(ngModel)]="professional.number">
+            [(ngModel)]="professional.address.number">
             <mat-error *ngIf="formCadastro.get('number')?.errors?.['required'] && formCadastro.get('number')?.touched">Número Obrigatório</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Bairro*" formControlName="district"
-            [(ngModel)]="professional.district">
+            [(ngModel)]="professional.address.district">
             <mat-error *ngIf="formCadastro.get('district')?.errors?.['required'] && formCadastro.get('district')?.touched">Bairro Obrigatório</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Cidade*" formControlName="city"
-            [(ngModel)]="professional.city">
+            [(ngModel)]="professional.address.city">
             <mat-error *ngIf="formCadastro.get('city')?.errors?.['required'] && formCadastro.get('city')?.touched">Cidade Obrigatória</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Estado*" formControlName="state"
-            [(ngModel)]="professional.state">
+            [(ngModel)]="professional.address.state">
             <mat-error *ngIf="formCadastro.get('state')?.errors?.['required'] && formCadastro.get('state')?.touched">Estado Obrigatório</mat-error>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Complemento*" formControlName="complements"
-            [(ngModel)]="professional.complements">
+            [(ngModel)]="professional.address.complements">
             <mat-error *ngIf="formCadastro.get('complements')?.errors?.['required'] && formCadastro.get('complements')?.touched">Complemento Obrigatório</mat-error>
         </mat-form-field>
     

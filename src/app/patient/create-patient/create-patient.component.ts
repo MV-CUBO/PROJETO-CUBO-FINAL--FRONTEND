@@ -35,7 +35,7 @@ export class CreatePatientComponent implements OnInit{
     maritalStatus: ['', [Validators.required]],
     insuranceCompany: ['', [Validators.required]],
     healtInsurenceCard: ['', [Validators.required]],
-    observation: ['', [Validators.required]],
+    observation: [''],
     zipcode: ['', [Validators.required]],
     street: ['', [Validators.required]],
     number: ['', [Validators.required]],
@@ -49,6 +49,14 @@ export class CreatePatientComponent implements OnInit{
   patient: Patient = {
     name: '',
     cpf: "",
+    dateOfBirth: new Date(),
+    phone: '',
+    email: '',
+    gender: '',
+    maritalStatus: '',
+    insuranceCompany: '',
+    healtInsurenceCard: '',
+    observation: '',
     address: {
       zipcode: '',
       street: '',
@@ -58,20 +66,12 @@ export class CreatePatientComponent implements OnInit{
       state: '',
       complements: ''
     },
-    dateOfBirth: new Date(),
-    phone: '',
-    email: '',
-    password: "",
-    gender: '',
-    maritalStatus: '',
-    insuranceCompany: '',
-    healtInsurenceCard: '',
-    observation: ''
   }
 
-  user: UserPatient = {
+  userPatient: UserPatient = {
     username: '',
-    password: ''
+    password: '',
+    role: 'ROLE_PATIENT'
   }
 
   constructor(private patientService: PatientService,
@@ -79,9 +79,10 @@ export class CreatePatientComponent implements OnInit{
 
   createPatient(): void {
     this.patientService.create(this.patient);
-    this.patientService.createUser(this.user)
+    this.patientService.createUser(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
     console.log(this.patient);
+    console.log(this.userPatient);
   }
 
 

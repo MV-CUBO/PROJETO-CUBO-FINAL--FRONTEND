@@ -56,19 +56,29 @@
 
         <mat-form-field>
             <input matInput placeholder="Email*" type="email" formControlName="email"
-            [(ngModel)]="patient.email">
+            [(ngModel)]="patient.email" [(ngModel)]="userPatient.username" name="email">
             <mat-error *ngIf="formCadastro.get('email')?.errors?.['required'] && 
-            formCadastro.get('email')?.touched">Especialidade Obrigatória</mat-error>
+            formCadastro.get('email')?.touched">Email Obrigatório</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <input type="password" matInput placeholder="Senha*" formControlName="password"
-            [(ngModel)]="patient.password">
+            [(ngModel)]="userPatient.password">
         </mat-form-field>
 
         <mat-form-field>
             <input type="password" matInput placeholder="Confirmar Senha*" 
             formControlName="confirmPassword">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" >
+            <mat-label>cargo</mat-label>
+            <mat-select formControlName="gender"
+            [(ngModel)]="patient.gender">
+            <mat-option *ngFor="let genero of generos" [value]="genero.value">
+            {{genero.viewValue}}
+            </mat-option>
+        </mat-select>
         </mat-form-field>
 
         <mat-form-field appearance="fill" >

@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PatientService {
 
-  baseUrlDoctor = "http://localhost:5000/api/doctor";
+  baseUrlDoctor = "http://localhost:5000/api/patients";
   baseUrlUser = "http://localhost:5000/api/users";
 
   

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProfessionalComponent } from './professional-create/professional.component';
+import { CreateDoctorComponent } from './professional-create/create-doctor.component';
 import { PatientRoutingModule } from '../patient/patient-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,8 +15,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
+
 @NgModule({
-  declarations: [ProfessionalComponent],
+  declarations: [CreateDoctorComponent],
   imports: [
     CommonModule, 
     PatientRoutingModule,

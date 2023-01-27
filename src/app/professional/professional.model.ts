@@ -1,7 +1,11 @@
+import { Address } from './../patient/patient.component';
+
+
 export interface Professional {
-    id?: number
+    id?: string
     name: string
     cpf: string
+    address: Address,
     dateOfBirth: Date
     phone: string
     email: string
@@ -10,16 +14,19 @@ export interface Professional {
     maritalStatus: string
     crm: string
     specialty: string
-    zipcode: string
-    street: string
-    number: string
-    district: string
-    city: string
-    state: string
-    complements: string
 }
 
 export interface UserProfessional {
     username: string
     password: string
 }
+
+export interface Genero {
+    value: string;
+    viewValue: string;
+  }
+  
+export interface EstadoCivil{
+    value: string;
+    viewValue: string;
+  }
