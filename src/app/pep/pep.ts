@@ -1,4 +1,5 @@
 export interface Pep {
+  id?:string,
   pepNumber: string,
   patientId: string,
   doctorId: string,
