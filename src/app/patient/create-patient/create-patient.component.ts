@@ -33,8 +33,9 @@ export class CreatePatientComponent implements OnInit{
     confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
     gender: ['',[Validators.required]],
     maritalStatus: ['', [Validators.required]],
-    crm: ['', [Validators.required]],
-    specialty: ['', [Validators.required]],
+    insuranceCompany: ['', [Validators.required]],
+    healtInsurenceCard: ['', [Validators.required]],
+    observation: ['', [Validators.required]],
     zipcode: ['', [Validators.required]],
     street: ['', [Validators.required]],
     number: ['', [Validators.required]],
@@ -45,7 +46,7 @@ export class CreatePatientComponent implements OnInit{
     });
   }
 
-  professional: Patient = {
+  patient: Patient = {
     name: '',
     cpf: "",
     dateOfBirth: new Date(),
@@ -54,8 +55,9 @@ export class CreatePatientComponent implements OnInit{
     password: "",
     gender: '',
     maritalStatus: '',
-    crm: '',
-    specialty: '',
+    insuranceCompany: '',
+    healtInsurenceCard: '',
+    observation: '',
     zipcode: '',
     street: '',
     number: '',
@@ -73,11 +75,11 @@ export class CreatePatientComponent implements OnInit{
   constructor(private patientService: PatientService,
     private router: Router, private formBuilder: FormBuilder) {}
 
-  createProfessional(): void {
-    this.patientService.create(this.professional);
+  createPatient(): void {
+    this.patientService.create(this.patient);
     this.patientService.createUser(this.user)
     this.patientService.showMessage("Cadastrado com sucesso!");
-    console.log(this.professional);
+    console.log(this.patient);
   }
 
 

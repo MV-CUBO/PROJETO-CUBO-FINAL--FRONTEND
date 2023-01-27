@@ -10,8 +10,9 @@ export interface Patient {
   password: string
   gender: string
   maritalStatus: string
-  crm: string
-  specialty: string
+  insuranceCompany: string
+  healtInsurenceCard: string
+  observation: string
   zipcode: string
   street: string
   number: string
