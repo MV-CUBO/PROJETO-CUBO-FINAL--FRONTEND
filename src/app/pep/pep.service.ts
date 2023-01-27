@@ -4,9 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pep } from './pep';
 
-export interface Patient{
+export interface Person{
    name: string,
 }
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +24,20 @@ export class PepService {
     return this.http.get<Pep[]>(this.API)
   }
 
-  getPatientId(id: string): Observable<Patient>{
+  getPatientId(id: string): Observable<Person>{
     const URL = `${this.API_PATIENT}/${id}`;
-    return this.http.get<Patient>(URL)
+    return this.http.get<Person>(URL)
   }
-  getDoctorId(id: string): Observable<Patient>{
+
+  getDoctorId(id: string): Observable<Person>{
     const URL = `${this.API_DOCTOR}/${id}`;
-    return this.http.get<Patient>(URL)
+    return this.http.get<Person>(URL)
   }
+
+  getPepId(id:string): Observable<Pep>{
+    const URL = `${this.API}/${id}`;
+    return this.http.get<Pep>(URL)
+  }
+
 
 }
