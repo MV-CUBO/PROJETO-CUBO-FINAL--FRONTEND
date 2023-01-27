@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PatientRoutingModule } from './patient-routing.module';
-import { PatientComponent } from './patient.component';
-import { CreatePatientComponent } from './create-patient/create-patient.component';
+import { ProfessionalComponent } from './professional-create/professional.component';
+import { PatientRoutingModule } from '../patient/patient-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -14,8 +13,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+
+
 @NgModule({
-  declarations: [PatientComponent, CreatePatientComponent],
+  declarations: [ProfessionalComponent],
   imports: [
     CommonModule, 
     PatientRoutingModule,
@@ -29,6 +30,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatNativeDateModule,
     MatSnackBarModule,
     ReactiveFormsModule,
-  ],
+  ]
 })
-export class PatientModule {}
+export class ProfessionalModule { }

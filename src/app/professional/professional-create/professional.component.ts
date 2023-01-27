@@ -3,7 +3,7 @@ import { Router, withHashLocation } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserProfessional } from '../userProfessional.model';
+import { UserProfessional } from '../professional.model';
 
 interface Cargo {
   value: string;
@@ -97,7 +97,7 @@ export class ProfessionalComponent implements OnInit{
   dataSelecionada: Date = new Date();
   nome!: string;
     
-
+  
 
   cargos: Cargo[] = [
     {value: 'doctor', viewValue: 'Médico(a)'},
@@ -105,15 +105,15 @@ export class ProfessionalComponent implements OnInit{
   ];
 
   generos: Genero[] = [
-    {value: 'masculine', viewValue: 'Masculino'},
-    {value: 'feminine', viewValue: 'Feminino'},
+    {value: 'MALE', viewValue: 'Masculino'},
+    {value: 'FEMALE', viewValue: 'Feminino'},
   ];
 
   estadoCivil: EstadoCivil[] = [
-    {value: 'not married', viewValue: 'Solteiro(a)'},
-    {value: 'married', viewValue: 'Casado(a)'},
-    {value: 'widower', viewValue: 'Viuvo(a)'},
-    {value: 'divorced', viewValue: 'Divorciado(a)'},
+    {value: 'SINGLE', viewValue: 'Solteiro(a)'},
+    {value: 'MARRIED', viewValue: 'Casado(a)'},
+    {value: 'WIDOVER', viewValue: 'Viuvo(a)'},
+    {value: 'DIVORCED', viewValue: 'Divorciado(a)'},
   ];
 
 }

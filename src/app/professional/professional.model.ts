@@ -18,3 +18,8 @@ export interface Professional {
     state: string
     complements: string
 }
+
+export interface UserProfessional {
+    username: string
+    password: string
+}

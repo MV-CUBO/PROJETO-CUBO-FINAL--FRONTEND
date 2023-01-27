@@ -1,6 +1,5 @@
-import { UserProfessional } from './professional.model';
+import { Patient, UserPatient } from './patient.component';
 import { Observable } from 'rxjs';
-import { Professional } from './professional.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -8,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfessionalService {
+export class PatientService {
 
   baseUrlDoctor = "http://localhost:5000/api/doctor";
   baseUrlUser = "http://localhost:5000/api/users";
@@ -25,12 +24,12 @@ export class ProfessionalService {
     })
   }
 
-  create(professional: Professional): Observable<Professional> {
-    return this.http.post<Professional>(this.baseUrlDoctor, professional)
+  create(patient: Patient): Observable<Patient> {
+    return this.http.post<Patient>(this.baseUrlDoctor, patient)
   }
 
-  createUser(user: UserProfessional): Observable<UserProfessional> {
-    return this.http.post<UserProfessional>(this.baseUrlUser, user)
+  createUser(user: UserPatient): Observable<UserPatient> {
+    return this.http.post<UserPatient>(this.baseUrlUser, user)
   }
 
   
