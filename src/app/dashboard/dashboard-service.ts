@@ -24,6 +24,5 @@ export class DashboardService {
   FindDoctorByStatus(value:string): Observable<any>{
     return this.http.get<any>(`${this.baseURL}/doctor/count/status?status=${value}`)
   }
-
 }
 
