@@ -8,15 +8,22 @@ import { Observable } from "rxjs";
 })
 export class DashboardService {
 
-  baseURL = 'http://localhost:5000/api:'
+  baseURL = 'http://localhost:5000/api'
   
    constructor(private http:HttpClient) { }
 
-  FindByGender(gender:string): Observable<number>{
-    return this.http.get<number>(`${this.baseURL}/patients/count/gender?gender=${gender}`)
+  FindByGender(gender:string): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}/patients/count/gender?gender=${gender}`)
   }
-  FindByStatusPep(status:string): Observable<number>{
-    return this.http.get<number>(`${this.baseURL}/pep/status/${status}/count`)
+  FindPatientsByStatus(value:string): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}/patients/count/status?status=${value}`)
   }
+  FindByStatusPep(status:string): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}/pep/status/${status}/count`)
+  }
+  FindDoctorByStatus(value:string): Observable<any>{
+    return this.http.get<any>(`${this.baseURL}/doctor/count/status?status=${value}`)
+  }
+
 }
 
