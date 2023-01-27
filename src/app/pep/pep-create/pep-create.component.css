@@ -1,6 +1,11 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
 h5{
-    margin-top: 24px;
-    display: flex;
+    margin-top: 25px;
+    margin-left: 25px;
     justify-content: center;
     width: 1px;
     padding: 10px;
@@ -8,20 +13,55 @@ h5{
 
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    top: 50px;
-    padding: 20px;
 
+*{
+    margin: 0 auto;
+    padding: 0;
 }
+
+form{
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+div {
+    padding: 20px 0px 25px;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+div {
+    padding: 20px 0px 25px;
+    width: 100vw;
+    height: 100vh;
+}
+
+div {
+    padding: 20px 0px 25px;
+    width: 100vw;
+    height: 100vh;
+}
+
+div {
+    padding: 5px;
+    width: 100vw;
+    height: 100vh;
+}
+
+div {
+    padding: 5px;
+    width: 100vw;
+    height: 100vh;
+}
+
 
 button{
     margin: 0 15px;
-    border-radius: 25px;
-    color: rgb(120, 168, 166);
+    border-radius: 0px;
     width: 90;
     height: 10;
+    color:cadetblue;
+
 }

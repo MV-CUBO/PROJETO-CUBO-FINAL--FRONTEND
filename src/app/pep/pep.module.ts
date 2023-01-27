@@ -7,18 +7,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms'
 import { PepCreateComponent } from './pep-create/pep-create.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
 @NgModule({
-  declarations: [PepComponent,PepCreateComponent],
+  declarations: [PepComponent,PepCreateComponent, PepComponent],
   imports: [
+    BrowserModule,
+    FormsModule,
     CommonModule,
     MatGridListModule,
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class PepModule { }

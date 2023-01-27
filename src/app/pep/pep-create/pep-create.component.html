@@ -1,44 +1,50 @@
 <h1 class="card-title"><strong>Histórico Médico</strong></h1>
 
 <form>
-    <p>Preencha os dados</p>
-   <div>
+    <h2>Preencha os dados</h2>
+    <br>
+   <div class="container-modal">
      <mat-form-field>
         <mat-label>Identificação do paciente:</mat-label>
-        <input matInput placeholder="Identificação">
+        <input matInput placeholder="Identificação"  class="form-control " [(ngModel)]="pep.patient_id" #patient.id>
      </mat-form-field>
+     <br>
    </div>
    <div>
      <mat-form-field>
         <mat-label>Identificação do médico:</mat-label>
-        <input matInput placeholder="Identificação">
+        <input matInput placeholder="Identificação" class="form-control " [(ngModel)]="pep.doctor_id" #doctor.id>
      </mat-form-field>
    </div>
+   <br>
    <div>
     <mat-form-field appearance="fill">
         <mat-label>Status</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput  [(ngModel)]="status" #status></textarea>
       </mat-form-field>
    </div>
    <div>
+    <br>
     <mat-form-field appearance="fill">
         <mat-label>Perscrição</mat-label>
-        <textarea matInput placeholder="Perscrição"></textarea>
+        <textarea matInput placeholder="Perscrição"  class="form-control " [(ngModel)]="pep.prescription" #prescription></textarea>
       </mat-form-field>
    </div>
+   <br>
    <div>
     <mat-form-field appearance="fill">
         <mat-label>Observação</mat-label>
-        <textarea matInput placeholder="Perscrição"></textarea>
+        <textarea matInput placeholder="Observação"  class="form-control " [(ngModel)]="pep.observation" #observation></textarea>
       </mat-form-field>
    </div>
+   <br>
+   <section>
+    <button mat-raised-button>Editar</button>
+    
+    <button mat-raised-button>Concluir</button>
+  </section>
 </form>
 
-<section>
-    <button mat-raised-button color="primary">Editar</button>
-    
-    <button mat-raised-button color="primary">Concluir</button>
-  </section>
   
   
   
