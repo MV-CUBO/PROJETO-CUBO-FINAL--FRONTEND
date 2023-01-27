@@ -1,9 +1,21 @@
 import { Component } from '@angular/core';
 
+export interface Address {
+  id?: number
+  zipcode: string
+  street: string
+  number: string
+  district: string
+  city: string
+  state: string
+  complements: string
+}
+
 export interface Patient {
   id?: number
   name: string
   cpf: string
+  address: Address
   dateOfBirth: Date
   phone: string
   email: string
@@ -13,13 +25,6 @@ export interface Patient {
   insuranceCompany: string
   healtInsurenceCard: string
   observation: string
-  zipcode: string
-  street: string
-  number: string
-  district: string
-  city: string
-  state: string
-  complements: string
 }
 
 export interface UserPatient {

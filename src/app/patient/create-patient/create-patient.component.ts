@@ -49,6 +49,15 @@ export class CreatePatientComponent implements OnInit{
   patient: Patient = {
     name: '',
     cpf: "",
+    address: {
+      zipcode: '',
+      street: '',
+      number: '',
+      district: '',
+      city: '',
+      state: '',
+      complements: ''
+    },
     dateOfBirth: new Date(),
     phone: '',
     email: '',
@@ -57,14 +66,7 @@ export class CreatePatientComponent implements OnInit{
     maritalStatus: '',
     insuranceCompany: '',
     healtInsurenceCard: '',
-    observation: '',
-    zipcode: '',
-    street: '',
-    number: '',
-    district: '',
-    city: '',
-    state: '',
-    complements: ''
+    observation: ''
   }
 
   user: UserPatient = {
