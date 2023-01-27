@@ -17,6 +17,8 @@ export class PepListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
 
+  @ViewChild(MatSort) sort !: MatSort;
+
   constructor(private service: PepService) {
 
   }
@@ -38,7 +40,20 @@ export class PepListComponent implements OnInit {
       });
       this.dataSource = new MatTableDataSource<Pep>(this.listPepData)
       this.dataSource.paginator= this.paginator;
+      this.dataSource.sort= this.sort;
     })
+  }
+
+  filterTable(event: Event){
+    const filvalue=(event.target as HTMLInputElement).value;
+    this.dataSource.filter = filvalue;
+  }
+
+  getrow(row:any){
+    console.log(row)
+  }
+  edit(row:any){
+    console.log(row)
   }
 
 }
