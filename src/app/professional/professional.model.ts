@@ -9,16 +9,16 @@ export interface Professional {
     dateOfBirth: Date
     phone: string
     email: string
-    password: string
     gender: string
     maritalStatus: string
     crm: string
     specialty: string
 }
 
-export interface UserProfessional {
+export interface UserDoctor {
     username: string
     password: string
+    role: string
 }
 
 export interface Genero {

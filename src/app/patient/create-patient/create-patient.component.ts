@@ -1,3 +1,4 @@
+import { Novo } from './../patient.component';
 import { PatientService } from './../patient.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -34,9 +35,9 @@ export class CreatePatientComponent implements OnInit{
     gender: ['',[Validators.required]],
     maritalStatus: ['', [Validators.required]],
     insuranceCompany: ['', [Validators.required]],
-    healtInsurenceCard: ['', [Validators.required]],
+    healthInsurenceCard: ['', [Validators.required]],
     observation: [''],
-    zipcode: ['', [Validators.required]],
+    zipCode: ['', [Validators.required]],
     street: ['', [Validators.required]],
     number: ['', [Validators.required]],
     district: ['', [Validators.required]],
@@ -55,10 +56,10 @@ export class CreatePatientComponent implements OnInit{
     gender: '',
     maritalStatus: '',
     insuranceCompany: '',
-    healtInsurenceCard: '',
+    healthInsurenceCard: '',
     observation: '',
     address: {
-      zipcode: '',
+      zipCode: '',
       street: '',
       number: '',
       district: '',
@@ -74,17 +75,24 @@ export class CreatePatientComponent implements OnInit{
     role: 'ROLE_PATIENT'
   }
 
+  novo: Novo = {
+    nome: "angelo",
+    idade: "22"    
+  }
+
   constructor(private patientService: PatientService,
     private router: Router, private formBuilder: FormBuilder) {}
 
-  createPatient(): void {
-    this.patientService.create(this.patient);
+
+  createNovo(): void {
+    this.patientService.createNovo(this.patient);
     this.patientService.createUser(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
     console.log(this.patient);
     console.log(this.userPatient);
+    
+    
   }
-
 
   cancel(): void {
     this.router.navigate(['/login'])

@@ -1,9 +1,8 @@
-import { EstadoCivil, Genero, Professional } from './../professional.model';
-import { Router, withHashLocation } from '@angular/router';
+import { EstadoCivil, Genero, Professional, UserDoctor } from './../professional.model';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserProfessional } from '../professional.model';
 
 
 @Component({
@@ -28,7 +27,7 @@ export class CreateDoctorComponent implements OnInit{
     maritalStatus: ['', [Validators.required]],
     crm: ['', [Validators.required]],
     specialty: ['', [Validators.required]],
-    zipcode: ['', [Validators.required]],
+    zipCode: ['', [Validators.required]],
     street: ['', [Validators.required]],
     number: ['', [Validators.required]],
     district: ['', [Validators.required]],
@@ -42,7 +41,7 @@ export class CreateDoctorComponent implements OnInit{
     name: '',
     cpf: "",
     address: {
-      zipcode: '',
+      zipCode: '',
       street: '',
       number: '',
       district: '',
@@ -53,16 +52,16 @@ export class CreateDoctorComponent implements OnInit{
     dateOfBirth: new Date(),
     phone: '',
     email: '',
-    password: "",
     gender: '',
     maritalStatus: '',
     crm: '',
     specialty: ''
   }
 
-  user: UserProfessional = {
+  userDoctor: UserDoctor = {
     username: '',
-    password: ''
+    password: '',
+    role: 'ROLE_DOCTOR'
   }
 
   constructor(private professionalService: ProfessionalService,
@@ -70,7 +69,7 @@ export class CreateDoctorComponent implements OnInit{
 
   createProfessional(): void {
     this.professionalService.create(this.professional);
-    this.professionalService.createUser(this.user)
+    this.professionalService.createUser(this.userDoctor);
     this.professionalService.showMessage("Cadastrado com sucesso!");
     console.log(this.professional);
   }
@@ -80,9 +79,6 @@ export class CreateDoctorComponent implements OnInit{
     this.router.navigate(['/login'])
   }
 
-  dataSelecionada: Date = new Date();
-  nome!: string;
-    
 
   generos: Genero[] = [
     {value: 'MALE', viewValue: 'Masculino'},

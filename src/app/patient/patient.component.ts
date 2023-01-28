@@ -1,8 +1,13 @@
 import { Component } from '@angular/core';
 
+export interface Novo {
+  nome: string,
+  idade: string
+}
+
 export interface Address {
   id?: string
-  zipcode: string
+  zipCode: string
   street: string
   number: string
   district: string
@@ -22,7 +27,7 @@ export interface Patient {
   gender: string
   maritalStatus: string
   insuranceCompany: string
-  healtInsurenceCard: string
+  healthInsurenceCard: string
   observation: string
 }
 

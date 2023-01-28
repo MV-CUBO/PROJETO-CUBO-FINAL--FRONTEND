@@ -1,6 +1,6 @@
-import { Patient, UserPatient } from './patient.component';
+import { Patient, UserPatient, Novo } from './patient.component';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PatientService {
 
-  baseUrlDoctor = "http://localhost:5000/api/patients";
+  baseUrlPatient = "http://localhost:5000/api/patients";
   baseUrlUser = "http://localhost:5000/api/users";
 
   
@@ -25,11 +25,35 @@ export class PatientService {
   }
 
   create(patient: Patient): Observable<Patient> {
-    return this.http.post<Patient>(this.baseUrlDoctor, patient)
+    return this.http.post<Patient>(this.baseUrlPatient, patient)
   }
 
   createUser(user: UserPatient): Observable<UserPatient> {
     return this.http.post<UserPatient>(this.baseUrlUser, user)
+  }
+
+  createUserPatient(userPatient: UserPatient): void {
+    const httpOptions = {
+     headers: new HttpHeaders({
+       'Content-Type': 'application/json'
+     })
+    };
+    this.http.post(this.baseUrlPatient, userPatient, httpOptions)
+     .subscribe(res => {
+       console.log(res);
+     });
+ }
+
+  createNovo(patient: Patient): void {
+     const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+     };
+     this.http.post(this.baseUrlPatient, patient, httpOptions)
+      .subscribe(res => {
+        console.log(res);
+      });
   }
 
   

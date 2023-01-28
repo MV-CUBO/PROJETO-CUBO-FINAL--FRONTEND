@@ -1,4 +1,4 @@
-import { UserProfessional } from './professional.model';
+import { UserDoctor } from './professional.model';
 import { Observable } from 'rxjs';
 import { Professional } from './professional.model';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProfessionalService {
 
-  baseUrlDoctor = "http://localhost:5000/api/doctor";
+  baseUrlDoctor = "http://localhost:5000/patients";
   baseUrlUser = "http://localhost:5000/api/users";
 
   
@@ -29,8 +29,8 @@ export class ProfessionalService {
     return this.http.post<Professional>(this.baseUrlDoctor, professional)
   }
 
-  createUser(user: UserProfessional): Observable<UserProfessional> {
-    return this.http.post<UserProfessional>(this.baseUrlUser, user)
+  createUser(user: UserDoctor): Observable<UserDoctor> {
+    return this.http.post<UserDoctor>(this.baseUrlUser, user)
   }
 
   
