@@ -8,6 +8,7 @@ import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PepComponent } from './pep/pep.component';
 import { PepCreateComponent } from './pep/pep-create/pep-create.component';
+import { PepListComponent } from './pep/pep-list/pep-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     // data: { roles: ['admin'] }
   },
   { path: 'patient/pep', component: PepComponent},
+  { path: 'admin/listapep', component: PepListComponent},
   {
     path: 'patient',
     component: PatientComponent,
