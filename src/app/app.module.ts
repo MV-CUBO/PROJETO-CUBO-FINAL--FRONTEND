@@ -13,6 +13,9 @@ import { LoginModule } from './access/login/login.module';
 import { PepCreateComponent } from './pep/pep-create/pep-create.component';
 import { PepModule } from './pep/pep.module';
 import { AuthInterceptor } from './access/auth/authInterceptor';
+import { PatientModule } from './patient/patient.module';
+import { ProfessionalModule } from './professional/professional.module';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -29,15 +32,17 @@ import { AuthInterceptor } from './access/auth/authInterceptor';
     AppRoutingModule,
     HttpClientModule,
     LoginModule,
-    PepModule
-
+    PepModule,
+    PatientModule,
+    ProfessionalModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }
   ],
   bootstrap: [AppComponent]
 })
