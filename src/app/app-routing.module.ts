@@ -15,18 +15,25 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    children: [{ path: 'dashboard', component: DashboardComponent}]
-    // canActivate: [AuthGuard],
-    // data: { roles: ['admin'] }
+    canActivate: [AuthGuard],
+     data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
-  { path: 'patient/pep', component: PepComponent},
-  { path: 'admin/listapep', component: PepListComponent},
+  { path: 'patient/pep', component: PepComponent },
+  {
+    path: 'admin/listapep',
+    component: PepListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
   {
     path: 'patient',
     component: PatientComponent,
-    children: [{ path: 'dashboard', component: DashboardComponent }]
-    // canActivate: [AuthGuard],
-    // data: { roles: ['patient'] }
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_PATIENT'] }
   },
 ]
 
