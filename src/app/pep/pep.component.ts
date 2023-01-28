@@ -1,4 +1,3 @@
-import { getDiagnosticNode } from '@angular/compiler-cli/src/ngtsc/scope/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Pep } from './pep';
 import { PepService } from './pep.service';
@@ -23,11 +22,7 @@ export class PepComponent implements OnInit {
   constructor(private service: PepService){}
 
   ngOnInit(){
-    this.getId()
     this.getPep(this.id);
-  }
-  getId() {
-    return
   }
 
   getPep(id: string){

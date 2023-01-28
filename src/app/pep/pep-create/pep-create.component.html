@@ -1,50 +1,75 @@
 <h1 class="card-title"><strong>Histórico Médico</strong></h1>
 
-<form>
-    <h2>Preencha os dados</h2>
-    <br>
-   <div class="container-modal">
-     <mat-form-field>
-        <mat-label>Identificação do paciente:</mat-label>
-        <input matInput placeholder="Identificação"  class="form-control " [(ngModel)]="pep.patient_id" #patient.id>
-     </mat-form-field>
-     <br>
-   </div>
-   <div>
-     <mat-form-field>
-        <mat-label>Identificação do médico:</mat-label>
-        <input matInput placeholder="Identificação" class="form-control " [(ngModel)]="pep.doctor_id" #doctor.id>
-     </mat-form-field>
-   </div>
-   <br>
-   <div>
-    <mat-form-field appearance="fill">
-        <mat-label>Status</mat-label>
-        <textarea matInput  [(ngModel)]="status" #status></textarea>
-      </mat-form-field>
-   </div>
-   <div>
-    <br>
-    <mat-form-field appearance="fill">
-        <mat-label>Perscrição</mat-label>
-        <textarea matInput placeholder="Perscrição"  class="form-control " [(ngModel)]="pep.prescription" #prescription></textarea>
-      </mat-form-field>
-   </div>
-   <br>
-   <div>
-    <mat-form-field appearance="fill">
-        <mat-label>Observação</mat-label>
-        <textarea matInput placeholder="Observação"  class="form-control " [(ngModel)]="pep.observation" #observation></textarea>
-      </mat-form-field>
-   </div>
-   <br>
-   <section>
-    <button mat-raised-button>Editar</button>
-    
-    <button mat-raised-button>Concluir</button>
-  </section>
-</form>
+<mat-card class="container-model">
 
+
+      <h2>Preencha os dados</h2>
+      <br>  
+   
+      <mat-form-field>
+          <mat-label>Identificação do paciente:</mat-label>
+          <input matInput
+           placeholder="Identificação"
+           type="text"
+           class="form-control"
+           [(ngModel)]="pep.patient_id" name="patient">
+      </mat-form-field>
+      <br>
+
+    
+      <mat-form-field>
+          <mat-label>Identificação do médico:</mat-label>
+          <input matInput placeholder="Identificação" 
+          type="text" 
+          class="form-control " 
+          [(ngModel)]="pep.doctor_id" 
+          name="doctor" >
+      </mat-form-field>
+    
+    <br>
+      
+      <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <textarea matInput 
+          type="text" 
+          class="form-control"
+          [(ngModel)]="pep.status" 
+          name="status"></textarea>
+        </mat-form-field>
+    
+    
+      <br>
+      <mat-form-field appearance="fill">
+          <mat-label>Perscrição</mat-label>
+          <textarea matInput 
+          placeholder="Perscrição"  
+          class="form-control "
+          type="text" 
+          [(ngModel)]="pep.prescription"
+           name="prescription"></textarea>
+        </mat-form-field>
+   
+    <br>
+    
+      <mat-form-field appearance="fill">
+          <mat-label>Observação</mat-label>
+          <textarea matInput 
+          placeholder="Observação"  
+          type="text"
+          class="form-control " 
+          [(ngModel)]="pep.observation" 
+          name="observation"></textarea>
+        </mat-form-field>
+    
+    <br>
+    <section>
+      <button mat-raised-button>Editar</button>
+      
+      <button mat-raised-button (click)="send()">Concluir</button>
+    </section>
+ 
+
+</mat-card>
   
   
   

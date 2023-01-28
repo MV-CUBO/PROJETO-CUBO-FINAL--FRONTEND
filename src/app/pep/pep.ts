@@ -10,3 +10,11 @@ export interface Pep {
   createdAt?: any,
   updateAt?: any,
 }
+
+export interface PepCreate {                                                              
+  patient_id: string,
+  doctor_id: string,
+  status: string,
+  prescription: string,
+  observation: string,
+}

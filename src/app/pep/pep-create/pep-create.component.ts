@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import {Pep} from './pep-create'
+import { Router } from '@angular/router';
+import { PepCreate } from '../pep';
+import { PepService } from '../pep.service';
+
 
 @Component({
   selector: 'app-pep-create',
@@ -9,8 +12,7 @@ import {Pep} from './pep-create'
 
 
 export class PepCreateComponent {
-  title = 'pepecreate';
-  pep: Pep = {
+  pep: PepCreate = {
     patient_id: '',
     doctor_id: '',
     status: '',
@@ -18,11 +20,15 @@ export class PepCreateComponent {
     observation: ''
   }
   
+  constructor(private service: PepService, private router: Router){}
 
-  ngOninit(): void {}
-
-  createPep(){
-    alert(this.pep)
+  ngOninit(): void {
+  }
+  
+  send(){
+    this.service.createPep(this.pep).subscribe(() => {
+      this.router.navigate(['/admin/listapep'])
+    });
   }
 
 
