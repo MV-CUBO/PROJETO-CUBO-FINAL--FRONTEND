@@ -24,13 +24,6 @@ export class PatientService {
     })
   }
 
-  create(patient: Patient): Observable<Patient> {
-    return this.http.post<Patient>(this.baseUrlPatient, patient)
-  }
-
-  createUser(user: UserPatient): Observable<UserPatient> {
-    return this.http.post<UserPatient>(this.baseUrlUser, user)
-  }
 
   createUserPatient(userPatient: UserPatient): void {
     const httpOptions = {
@@ -38,13 +31,13 @@ export class PatientService {
        'Content-Type': 'application/json'
      })
     };
-    this.http.post(this.baseUrlPatient, userPatient, httpOptions)
+    this.http.post(this.baseUrlUser, userPatient, httpOptions)
      .subscribe(res => {
        console.log(res);
      });
  }
 
-  createNovo(patient: Patient): void {
+  createNewPatient(patient: Patient): void {
      const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'

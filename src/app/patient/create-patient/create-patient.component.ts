@@ -1,19 +1,9 @@
-import { Novo } from './../patient.component';
+import { EstadoCivil, Genero, Novo } from './../patient.component';
 import { PatientService } from './../patient.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Patient, UserPatient } from '../patient.component';
 import { Router } from '@angular/router';
-
-interface Genero {
-  value: string;
-  viewValue: string;
-}
-
-interface EstadoCivil{
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-create-patient',
@@ -43,7 +33,7 @@ export class CreatePatientComponent implements OnInit{
     district: ['', [Validators.required]],
     city: ['', [Validators.required]],
     state: ['', [Validators.required]],
-    complements: ['', [Validators.required]]
+    complements: ['']
     });
   }
 
@@ -83,25 +73,17 @@ export class CreatePatientComponent implements OnInit{
   constructor(private patientService: PatientService,
     private router: Router, private formBuilder: FormBuilder) {}
 
-
-  createNovo(): void {
-    this.patientService.createNovo(this.patient);
-    this.patientService.createUser(this.userPatient)
+    createPatient(): void {
+    this.patientService.createNewPatient(this.patient);
+    this.patientService.createUserPatient(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
     console.log(this.patient);
     console.log(this.userPatient);
-    
-    
   }
 
   cancel(): void {
     this.router.navigate(['/login'])
   }
-
-  dataSelecionada: Date = new Date();
-  nome!: string;
-    
-  
 
   generos: Genero[] = [
     {value: 'MALE', viewValue: 'Masculino'},
@@ -111,7 +93,6 @@ export class CreatePatientComponent implements OnInit{
   estadoCivil: EstadoCivil[] = [
     {value: 'SINGLE', viewValue: 'Solteiro(a)'},
     {value: 'MARRIED', viewValue: 'Casado(a)'},
-    {value: 'WIDOVER', viewValue: 'Viuvo(a)'},
     {value: 'DIVORCED', viewValue: 'Divorciado(a)'},
   ];
 

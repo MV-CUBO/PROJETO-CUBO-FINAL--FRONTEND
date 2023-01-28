@@ -37,6 +37,17 @@ export interface UserPatient {
   role: string
 }
 
+export interface Genero {
+  value: string;
+  viewValue: string;
+}
+
+export interface EstadoCivil{
+  value: string;
+  viewValue: string;
+}
+
+
 @Component({
   selector: 'app-patient',
   templateUrl: './patient.component.html',

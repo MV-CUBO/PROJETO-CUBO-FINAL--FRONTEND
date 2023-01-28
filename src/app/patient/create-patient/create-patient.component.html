@@ -138,18 +138,11 @@
         <mat-form-field>
             <input matInput placeholder="Complemento*" formControlName="complements"
             [(ngModel)]="patient.address.complements" name="complements">
-            <mat-error *ngIf="formCadastro.get('complements')?.errors?.['required'] && 
-            formCadastro.get('complements')?.touched">Complemento Obrigatório</mat-error>
         </mat-form-field>
     </form>
 
-    <!-- <button [disabled]="!formCadastro.valid" mat-raised-button 
+    <button [disabled]="!formCadastro.valid" mat-raised-button 
     (click)="createPatient()" color="primary">
-        Salvar
-    </button> -->
-
-    <button mat-raised-button (click)="createNovo()"
-     color="primary">
         Salvar
     </button>
 

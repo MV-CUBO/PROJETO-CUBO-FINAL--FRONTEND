@@ -1,7 +1,7 @@
 import { UserDoctor } from './professional.model';
 import { Observable } from 'rxjs';
 import { Professional } from './professional.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProfessionalService {
 
-  baseUrlDoctor = "http://localhost:5000/patients";
+  baseUrlDoctor = "http://localhost:5000/api/doctor";
   baseUrlUser = "http://localhost:5000/api/users";
 
   
@@ -25,12 +25,28 @@ export class ProfessionalService {
     })
   }
 
-  create(professional: Professional): Observable<Professional> {
-    return this.http.post<Professional>(this.baseUrlDoctor, professional)
-  }
+  createUserDoctor(userDoctor: UserDoctor): void {
+    const httpOptions = {
+     headers: new HttpHeaders({
+       'Content-Type': 'application/json'
+     })
+    };
+    this.http.post(this.baseUrlUser, userDoctor, httpOptions)
+     .subscribe(res => {
+       console.log(res);
+     });
+ }
 
-  createUser(user: UserDoctor): Observable<UserDoctor> {
-    return this.http.post<UserDoctor>(this.baseUrlUser, user)
+  createNewProfessional(doctor: Professional): void {
+     const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+     };
+     this.http.post(this.baseUrlDoctor, doctor, httpOptions)
+      .subscribe(res => {
+        console.log(res);
+      });
   }
 
   

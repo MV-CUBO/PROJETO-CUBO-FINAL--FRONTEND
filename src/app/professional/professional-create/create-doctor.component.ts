@@ -1,4 +1,4 @@
-import { EstadoCivil, Genero, Professional, UserDoctor } from './../professional.model';
+import { Especialidade, EstadoCivil, Genero, Professional, UserDoctor } from './../professional.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProfessionalService } from '../professional.service'
@@ -33,7 +33,7 @@ export class CreateDoctorComponent implements OnInit{
     district: ['', [Validators.required]],
     city: ['', [Validators.required]],
     state: ['', [Validators.required]],
-    complements: ['', [Validators.required]]
+    complements: ['']
     });
   }
 
@@ -67,11 +67,12 @@ export class CreateDoctorComponent implements OnInit{
   constructor(private professionalService: ProfessionalService,
     private router: Router, private formBuilder: FormBuilder) {}
 
-  createProfessional(): void {
-    this.professionalService.create(this.professional);
-    this.professionalService.createUser(this.userDoctor);
+    createNewDoctor(): void {
+    this.professionalService.createNewProfessional(this.professional);
+    this.professionalService.createUserDoctor(this.userDoctor);
     this.professionalService.showMessage("Cadastrado com sucesso!");
     console.log(this.professional);
+    console.log(this.userDoctor);
   }
 
 
@@ -88,8 +89,15 @@ export class CreateDoctorComponent implements OnInit{
   estadoCivil: EstadoCivil[] = [
     {value: 'SINGLE', viewValue: 'Solteiro(a)'},
     {value: 'MARRIED', viewValue: 'Casado(a)'},
-    {value: 'WIDOVER', viewValue: 'Viuvo(a)'},
     {value: 'DIVORCED', viewValue: 'Divorciado(a)'},
+  ];
+
+  especialidade: Especialidade[] = [
+    {value: 'ORTHOPEDICS', viewValue: 'Ortopedia'},
+    {value: 'PEDIATRICS', viewValue: 'Pediatria'},
+    {value: 'DERMATOLOGY', viewValue: 'Dermatologia'},
+    {value: 'CARDIOLOGY', viewValue: 'Cardiologia'},
+    {value: 'GYNECOLOGY', viewValue: 'Ginecologia'},
   ];
 
 }

@@ -22,9 +22,14 @@ export interface UserDoctor {
 }
 
 export interface Genero {
-    value: string;
-    viewValue: string;
-  }
+  value: string;
+  viewValue: string;
+}
+
+export interface Especialidade {
+  value: string;
+  viewValue: string;
+}
   
 export interface EstadoCivil{
     value: string;
