@@ -54,7 +54,7 @@
 
         <mat-form-field>
             <mat-label>Telefone</mat-label>
-            <input matInput placeholder="Telefone*" formControlName="phone"
+            <input matInput placeholder="Telefone" formControlName="phone"
             [(ngModel)]="professional.phone">
             <mat-error *ngIf="formCadastro.get('phone')?.errors?.['required'] && 
             formCadastro.get('phone')?.touched">Telefone Obrigatório</mat-error>
