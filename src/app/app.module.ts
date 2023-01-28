@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,11 +10,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
-
-
-import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { PatientModule } from './patient/patient.module';
-import { ProfessionalModule } from './professional/professional.module';
+import { PepCreateComponent } from './pep/pep-create/pep-create.component';
+import { PepModule } from './pep/pep.module';
+import { AuthInterceptor } from './access/auth/authInterceptor';
 
 
 @NgModule({
@@ -22,6 +21,7 @@ import { ProfessionalModule } from './professional/professional.module';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
+    PepCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,11 +29,15 @@ import { ProfessionalModule } from './professional/professional.module';
     AppRoutingModule,
     HttpClientModule,
     LoginModule,
-    PatientModule,
-    ProfessionalModule,
+    PepModule
+
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
