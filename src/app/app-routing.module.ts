@@ -8,6 +8,8 @@ import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PepComponent } from './pep/pep.component';
 import { PepListComponent } from './pep/pep-list/pep-list.component';
+import { CreateDoctorComponent } from './professional/professional-create/create-doctor.component';
+import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -35,6 +37,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ['ROLE_PATIENT'] }
   },
+  { path: 'create-doctor', component: CreateDoctorComponent },
+  { path: 'create-patient', component: CreatePatientComponent },
 ]
 
 @NgModule({
