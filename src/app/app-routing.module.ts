@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'patient/pep', component: PepComponent },
   {
-    path: 'admin/listapep',
+    path: 'admin/lista-pep',
     component: PepListComponent,
     canActivate: [AuthGuard],
     data: {
@@ -37,8 +37,22 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ['ROLE_PATIENT'] }
   },
-  { path: 'create-doctor', component: CreateDoctorComponent },
-  { path: 'create-patient', component: CreatePatientComponent },
+  { 
+    path: 'admin/criar-profissional', 
+    component: CreateDoctorComponent ,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  { 
+    path: 'admin/criar-paciente', 
+    component: CreatePatientComponent ,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
 ]
 
 @NgModule({

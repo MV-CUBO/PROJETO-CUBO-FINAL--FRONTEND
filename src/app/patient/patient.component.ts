@@ -21,7 +21,7 @@ export interface Patient {
   name: string
   cpf: string
   address: Address
-  dateOfBirth: Date
+  dateOfBirth: string
   phone: string
   email: string
   gender: string
@@ -34,7 +34,7 @@ export interface Patient {
 export interface UserPatient {
   username: string
   password: string
-  role: string
+  role: string[]
 }
 
 export interface Genero {

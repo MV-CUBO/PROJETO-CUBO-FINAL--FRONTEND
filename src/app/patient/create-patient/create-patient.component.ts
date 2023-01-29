@@ -40,7 +40,7 @@ export class CreatePatientComponent implements OnInit{
   patient: Patient = {
     name: '',
     cpf: "",
-    dateOfBirth: new Date(),
+    dateOfBirth: '',
     phone: '',
     email: '',
     gender: '',
@@ -62,7 +62,7 @@ export class CreatePatientComponent implements OnInit{
   userPatient: UserPatient = {
     username: '',
     password: '',
-    role: 'ROLE_PATIENT'
+    role: ['ROLE_PATIENT']
   }
 
   novo: Novo = {
