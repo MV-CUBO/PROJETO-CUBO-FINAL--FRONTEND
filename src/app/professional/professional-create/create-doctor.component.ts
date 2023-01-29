@@ -71,8 +71,6 @@ export class CreateDoctorComponent implements OnInit{
     this.professionalService.createNewProfessional(this.professional);
     this.professionalService.createUserDoctor(this.userDoctor);
     this.professionalService.showMessage("Cadastrado com sucesso!");
-    console.log(this.professional);
-    console.log(this.userDoctor);
   }
 
 

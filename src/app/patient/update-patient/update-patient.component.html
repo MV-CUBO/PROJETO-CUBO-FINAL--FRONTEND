@@ -15,7 +15,7 @@
         <mat-form-field>
             <mat-label>CPF</mat-label>
             <input matInput placeholder="apenas digitos" formControlName="cpf"
-            [(ngModel)]="patient.cpf" name="cpf">
+            [(ngModel)]="patient.cpf" name="cpf" readonly>
             <mat-error *ngIf="formCadastro.get('cpf')?.errors?.['required'] && 
             formCadastro.get('cpf')?.touched">CPF Obrigatório</mat-error>
         </mat-form-field>

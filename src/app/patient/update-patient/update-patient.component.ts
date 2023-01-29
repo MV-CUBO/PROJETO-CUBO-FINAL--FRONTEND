@@ -11,26 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdatePatientComponent implements OnInit{
 
-  patient!: Patient 
-
-  userPatient: UserPatient = {
-    username: '',
-    password: '',
-    role: ['ROLE_PATIENT']
-  }
-
-  constructor(
-    private service: PatientService, 
-    private router: Router,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder
-    ){}
-
     formCadastro!: FormGroup;
-
-    
-
   ngOnInit(): void {
+
     const id = this.route.snapshot.paramMap.get('id');
     this.service.readById(id!).subscribe(patient => {
       this.patient = patient
@@ -55,8 +38,17 @@ export class UpdatePatientComponent implements OnInit{
       state: ['', [Validators.required]],
       complements: ['']
       });
+
+      
     
   }
+
+  constructor(
+    private service: PatientService, 
+    private router: Router,
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+    ){}
 
   updatePatient(): void{
     this.service.update(this.patient).subscribe(() => {
@@ -67,6 +59,34 @@ export class UpdatePatientComponent implements OnInit{
 
   cancel(): void{
     this.router.navigate(["/admin"])
+  }
+
+  patient: Patient = {
+    name: '',
+    cpf: "",
+    dateOfBirth: '',
+    phone: '',
+    email: '',
+    gender: '',
+    maritalStatus: '',
+    insuranceCompany: '',
+    healthInsurenceCard: '',
+    observation: '',
+    address: {
+      zipCode: '',
+      street: '',
+      number: '',
+      district: '',
+      city: '',
+      state: '',
+      complements: ''
+    }
+  }
+
+  userPatient: UserPatient = {
+    username: '',
+    password: '',
+    role: ['ROLE_PATIENT']
   }
 
   generos: Genero[] = [

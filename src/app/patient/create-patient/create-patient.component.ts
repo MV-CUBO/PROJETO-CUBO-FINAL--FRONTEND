@@ -77,8 +77,6 @@ export class CreatePatientComponent implements OnInit{
     this.patientService.createNewPatient(this.patient);
     this.patientService.createUserPatient(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
-    console.log(this.patient);
-    console.log(this.userPatient);
   }
 
   cancel(): void {
