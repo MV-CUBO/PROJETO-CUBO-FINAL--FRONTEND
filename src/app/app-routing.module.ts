@@ -10,6 +10,7 @@ import { PepComponent } from './pep/pep.component';
 import { PepListComponent } from './pep/pep-list/pep-list.component';
 import { CreateDoctorComponent } from './professional/professional-create/create-doctor.component';
 import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
+import { PepLogComponent } from './pep/pep-log/pep-log.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,7 +19,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard],
-     data: {
+    data: {
       roles: ['ROLE_ADMIN']
     }
   },
@@ -35,19 +36,29 @@ const routes: Routes = [
     path: 'patient',
     component: PatientComponent,
     canActivate: [AuthGuard],
-    data: { roles: ['ROLE_PATIENT'] }
+    data: {
+      roles: ['ROLE_PATIENT']
+    }
   },
-  { 
-    path: 'admin/criar-profissional', 
-    component: CreateDoctorComponent ,
+  {
+    path: 'admin/criar-profissional',
+    component: CreateDoctorComponent,
     canActivate: [AuthGuard],
     data: {
       roles: ['ROLE_ADMIN']
     }
   },
-  { 
-    path: 'admin/criar-paciente', 
-    component: CreatePatientComponent ,
+  {
+    path: 'admin/criar-paciente',
+    component: CreatePatientComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  {
+    path: 'admin/pep-log',
+    component: PepLogComponent,
     canActivate: [AuthGuard],
     data: {
       roles: ['ROLE_ADMIN']
