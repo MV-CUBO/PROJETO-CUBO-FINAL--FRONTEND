@@ -27,7 +27,7 @@ export class PepComponent implements OnInit {
 
 
   getPep(id: string){
-    this.service.getPepId(id).subscribe((res) => {this.pep = res;})
+    this.service.getPepId(id).subscribe((res) => {this.pep = res})
   }
 
 }
