@@ -66,6 +66,17 @@
           </span>
         </a>
       </li>
+
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="admin/criar-paciente" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon fal fa-users-medical"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Cadastrar Paciente
+          </span>
+        </a>
+      </li>
+      
       <li class="sidenav-nav-item">
         <a class="sidenav-nav-link" routerLink="/admin/criar-profissional" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">
