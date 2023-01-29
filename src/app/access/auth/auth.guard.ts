@@ -12,7 +12,6 @@ export class AuthGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (this.authService.isAuthenticated()) {
       const bredecodedTokenmat = this.authService.getDecodedToken(this.authService.getToken());
-      console.log(route.data['roles'])
       if (route.data['roles'][0] && route.data['roles'][0].indexOf(bredecodedTokenmat.roles) === -1) {
         this.router.navigate(['/']);
         return false;
