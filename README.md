@@ -88,6 +88,7 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
    <tr align=center>
         <th><a href="https://mv.com.br"><strong> MV </strong><a></th>
 	<th><a href="https://github.com/RafaelTomas"><strong> Rafael Tomas </strong><a></th>
+         <th><a href="https://github.com/0Guilhermino"><strong> Angelo Guilhermino </strong><a></th>
   </tr>
     <td align="center">
       <a href="https://mv.com.br">
@@ -105,6 +106,16 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
         <sub>
             <a href="https://www.linkedin.com/in/rafaeltomass/" target="_blank" rel="noreferrer" rel="noopener">
               <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin"/>
+            </a></br>
+          </div>
+        </sub>
+    </td>
+     <td align="center">
+      <a href="https://github.com/RafaelTomas">
+        <img src="https://avatars.githubusercontent.com/u/50936600?s=400&u=7467a64e09c5429efda547d701a4b0aace169f0a&v=4" width="110"/></a><br>
+        <sub>
+            <a href="https://www.linkedin.com/in/angelo-guilhermino-736291109/" target="_blank" rel="noreferrer"                rel="noopener">
+              <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin"/> 
             </a></br>
           </div>
         </sub>
