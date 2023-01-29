@@ -118,6 +118,9 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
             <a href="https://www.linkedin.com/in/angelo-guilhermino-736291109/" target="_blank" rel="noreferrer"                rel="noopener">
               <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin"/> 
             </a></br>
+            <a href="https://www.linkedin.com/in/laryssa-ribeiro-927056202/" target="_blank" rel="noreferrer" rel="noopener">
+               <img src="https://img.shield.io/badge/Linkedin.com-927056202=for-th-badge=linkedin&logoColor=white" alt="Linkedin"/ >
+             </a><br>
           </div>
         </sub>
     </td>
