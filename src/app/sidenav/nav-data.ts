@@ -1,30 +1,3 @@
-
-
-export const navbarDataAdmin = [
-  {
-    routeLink: 'dashboard',
-    icon: 'fal fa-home',
-    label: 'Dashboard',
-  },
-  {
-    routeLink: 'paciente',
-    icon: 'fal fa-user',
-    label: 'Paciente'
-  },
-  //crud de paciente
-  {
-    routeLink: '',
-    icon: 'fal fa-user-md',
-    label: 'Profissional'
-  },
-  //crud de profissional
-  {
-    routeLink: 'paciente',
-    icon: 'fal fa-history',
-    label: 'Log'
-  },
-];
-
 export const navbarDataDoctor = [
   {
     routeLink: 'dashboard',
@@ -50,10 +23,5 @@ export const navbarDataDoctor = [
     label: 'Prontuario'
   },
   //cru pep,
-  {
-    routeLink: 'paciente',
-    icon: 'fal fa-power-off',
-    label: 'LogOut'
-  },
 
 ];

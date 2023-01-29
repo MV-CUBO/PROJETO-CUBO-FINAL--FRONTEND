@@ -86,11 +86,11 @@ export class DashboardComponent implements OnInit {
     map(({ matches }) => {
       if (matches) {
         return [
-          { cols: 1, rows: 1 },
+          { cols: 3, rows: 1},
         ];
       }
       return [
-        { cols: 1, rows: 2 },
+        { cols: 1, rows: 1 },
       ];
     })
   );

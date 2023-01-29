@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,9 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
-import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
-
-
+import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts'
+import { PepCreateComponent } from './pep/pep-create/pep-create.component';
+import { PepModule } from './pep/pep.module';
+import { AuthInterceptor } from './access/auth/authInterceptor';
+import { PatientModule } from './patient/patient.module';
+import { ProfessionalModule } from './professional/professional.module';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 
 @NgModule({
@@ -26,6 +31,7 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
     BodyComponent,
     SidenavComponent,
     DashboardComponent,
+    PepCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,12 +46,21 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
     HttpClientModule,
     LoginModule,
     NgChartsModule,
+    PepModule,
+    PatientModule,
+    ProfessionalModule
     
 
   ],
+  
   providers: [
-      { provide: NgChartsConfiguration, useValue: { generateColors: false }}
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: NgChartsConfiguration, useValue: { generateColors: false }}
   ],
   bootstrap: [AppComponent]
 })

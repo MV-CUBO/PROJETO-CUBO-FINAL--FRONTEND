@@ -2,7 +2,6 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../access/auth/auth.service';
-import { navbarDataDoctor, navbarDataAdmin } from './nav-data';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -45,21 +44,6 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  userId: string = '';
-  navDataPatient = {
-    routeLink: `patient/${this.userId}`,
-    icon: 'fal fa-clipboard',
-    label: 'Prontuario'
-  };
-
-  navDataAdmin = navbarDataAdmin;
-
-  buttonLogOut = {
-    icon: 'fal fa-power-off',
-    label: 'LogOut'
-  };
-
-  // navDataDoctor = navbarDataDoctor;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -73,9 +57,7 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const userInfo = this.authService.getDecodedToken()
     this.screenWidth = window.innerWidth;
-    this.userId = userInfo.id
   }
 
   toggleCollapse(): void {

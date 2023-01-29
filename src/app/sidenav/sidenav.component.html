@@ -11,11 +11,19 @@
   <ul class="sidenav-nav">
     <ng-container *ngIf="isPatient()">
       <li class="sidenav-nav-item">
-        <a class="sidenav-nav-link" [routerLink]="[navDataPatient.routeLink]" routerLinkActive="active"
+        <a class="sidenav-nav-link" routerLink="/patient/pep" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">
-          <i class="sidenav-link-icon" [class]="navDataPatient.icon"></i>
+          <i class="sidenav-link-icon fal fa-clipboard"></i>
           <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
-            {{navDataPatient.label}}
+            Prontuario
+          </span>
+        </a>
+      </li>
+      <li class="sidenav-nav-item">
+        <a (click)="logOut()" class="sidenav-nav-link">
+          <i class="sidenav-link-icon fal fa-power-off"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            LogOut
           </span>
         </a>
       </li>
@@ -30,28 +38,81 @@
           </span>
         </a>
       </li>
+            <li class="sidenav-nav-item">
+              <a (click)="logOut()" class="sidenav-nav-link">
+                <i class="sidenav-link-icon fal fa-power-off"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                  LogOut
+                </span>
+              </a>
+            </li>
     </ng-container> -->
     <ng-container *ngIf="isAdmin()">
-      <li class="sidenav-nav-item" *ngFor="let data of navDataAdmin">
-        <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="/admin/dashboard" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">
-          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <i class="sidenav-link-icon fal fa-home"></i>
           <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
-            {{data.label}}
+            Dashboard
+          </span>
+        </a>
+      </li>
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="/admin/criar-paciente" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon fal fa-user"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Paciente
+          </span>
+        </a>
+      </li>
+
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="admin/criar-paciente" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon fal fa-users-medical"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Cadastrar Paciente
+          </span>
+        </a>
+      </li>
+      
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="/admin/criar-profissional" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon fal fa-user-md"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Profissional
+          </span>
+        </a>
+      </li>
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="/admin/lista-pep" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon fal fal fa-clipboard"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Prontuarios
+          </span>
+        </a>
+      </li>
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" routerLink="/admin/pep-log" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <i class="sidenav-link-icon fal fa-history"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            Logs
+          </span>
+        </a>
+      </li>
+      <li class="sidenav-nav-item">
+        <a (click)="logOut()" class="sidenav-nav-link">
+          <i class="sidenav-link-icon fal fa-power-off"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            LogOut
           </span>
         </a>
       </li>
     </ng-container>
 
-    <ng-container>
-      <li class="sidenav-nav-item">
-        <a (click)="logOut()" class="sidenav-nav-link">
-          <i class="sidenav-link-icon" [class]="buttonLogOut.icon"></i>
-          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
-            {{buttonLogOut.label}}
-          </span>
-        </a>
-      </li>
-    </ng-container>
   </ul>
 </div>

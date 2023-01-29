@@ -10,35 +10,41 @@ import { AuthService } from 'src/app/access/auth/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  username = new FormControl('', [Validators.required]);
+  loginData: any = {
+    email: '',
+    password: '',
+  }
+
+  email = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
 
   constructor(private authService: AuthService, private router: Router) { }
 
   getErrorMessage() {
-    return this.username.hasError('required') ? 'You must enter a value' :
-      this.username.hasError('username') ? 'Not a valid username' :
+    return this.email.hasError('required') ? 'You must enter a value' :
+      this.email.hasError('email') ? 'Not a valid email' :
         '';
   }
 
   roleRedirection(token: any) {
     switch (token) {
-      case 'admin':
+      case 'ROLE_ADMIN':
         this.router.navigate(['/admin']);
         break;
-      case 'patient':
-        this.router.navigate([`/patient/${token.id}`]);
+      case 'ROLE_PATIENT':
+        this.router.navigate([`/patient/pep`]);
         break;
     }
   }
 
   login() {
-    this.authService.login(this.username.value!, this.password.value!)
+    this.authService.login(this.loginData.email, this.loginData.password)
       .subscribe(response => {
+        console.log(response);
         if (response.hasOwnProperty('token')) {
           localStorage.setItem('token', response.token);
-          const decodedToken = this.authService.getDecodedToken();
-          this.roleRedirection(decodedToken);
+          const decodedToken = this.authService.getDecodedToken(response.token);
+          this.roleRedirection(decodedToken.roles[0])
         }
       });
   }
