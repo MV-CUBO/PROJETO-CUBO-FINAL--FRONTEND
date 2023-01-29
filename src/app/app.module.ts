@@ -15,6 +15,7 @@ import { AuthInterceptor } from './access/auth/authInterceptor';
 import { PatientModule } from './patient/patient.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ProfessionalModule } from './professional/professional.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     LoginModule,
     PepModule,
     PatientModule,
-    DashboardModule
+    DashboardModule,
+    ProfessionalModule
   ],
   
   providers: [
