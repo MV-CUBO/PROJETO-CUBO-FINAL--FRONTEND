@@ -45,14 +45,19 @@ export class PatientService {
       });
   }
 
-  readById(id: string): void {
-    const url = `${this.baseUrlPatient}/${id}`
-    this.http.get(url);
+  read(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(this.baseUrlPatient);
   }
 
-  update(patient: Patient): void {
-    const url = `${this.baseUrlPatient}/${patient.id}`
-    this.http.put(url, patient);
+  readById(id: string): Observable<Patient> {
+    const url = `${this.baseUrlPatient}/${id}`
+    return this.http.get<Patient>(url);
   }
+
+  update(patient: Patient): Observable<Patient> {
+    const url = `${this.baseUrlPatient}/${patient.id}`
+    return this.http.put<Patient>(url, patient);
+  }
+
   
 }
