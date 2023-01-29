@@ -1,46 +1,31 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <div class="container">
-    <mat-grid-list cols="2" rowHeight="360px">
+  <h1 class="mat-h1"><strong>DASHBOARD</strong></h1>
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile colspan="2" rowspan="1">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          LISTA DE PACIENTES POR SEXO
-        </mat-card-header>
+        <canvas baseChart class="chart" [data]="statusPatientChartData" [type]="statusPatientChartType"></canvas>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="3" rowHeight="300px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">Pacientes por sexo</mat-card-content>
         <canvas id="dashboard-card" baseChart class="chart" [data]="patientGenderChartData"
-          [type]="patientGenderChartType">
-        </canvas>
+          [type]="patientGenderChartType"></canvas>
       </mat-card>
-    </mat-grid-list>
-    <mat-grid-list cols="2" rowHeight="360px">
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          PACIENTES POR STATUS NO SISTEMA
-        </mat-card-header>
-        <canvas baseChart class="chart" [data]="patientStatusChartData" [type]="patientStatusChartType">
-        </canvas>
+        <mat-card-content class="dashboard-card-content">Médicos por status</mat-card-content>
+        <canvas baseChart class="chart" [data]="doctorChartData" [type]="doctorChartType"></canvas>
       </mat-card>
-    </mat-grid-list>
-  </div>
-  <div class="container">
-    <mat-grid-list cols="2" rowHeight="360px">
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">
-        <mat-card-header>
-          PACIENTES POR STATUS CLÍNICO
-        </mat-card-header>
-        <canvas id="dashboard-card" baseChart class="chart" [data]="statusPatientChartData" [type]="statusPatientChartType">
-        </canvas>
+        <mat-card-content class="dashboard-card-content">Pacientes por status</mat-card-content>
+        <canvas baseChart class="chart" [data]="patientStatusChartData" [type]="patientStatusChartType"></canvas>
       </mat-card>
-    </mat-grid-list>
-    <mat-grid-list cols="2" rowHeight="300px">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <div class="title">
-          MÉDICOS NO SISTEMA
-          </div>
-        </mat-card-header>
-        <canvas baseChart class="chart" [data]="doctorChartData" [type]="doctorChartType">
-        </canvas>
-      </mat-card>
-    </mat-grid-list>
-  </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>

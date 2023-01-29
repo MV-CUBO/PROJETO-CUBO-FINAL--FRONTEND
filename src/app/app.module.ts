@@ -19,12 +19,12 @@ import { NgChartsModule, NgChartsConfiguration } from 'ng2-charts';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     SidenavComponent,
-    DashboardComponent,
     DashboardComponent,
   ],
   imports: [

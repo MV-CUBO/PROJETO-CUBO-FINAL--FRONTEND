@@ -9,10 +9,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent},
   {
     path: 'admin',
     component: AdminComponent,

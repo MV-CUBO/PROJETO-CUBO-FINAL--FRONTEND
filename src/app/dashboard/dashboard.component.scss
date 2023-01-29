@@ -1,41 +1,15 @@
-mat-card-title{
-  text-align: right;
-}
-
-canvas {
-
-  align-items: center;
-  left: 15px;
-  right: 15px;
-  
-}
-
 .grid-container {
   margin: 20px;
-  background-color: antiquewhite;
-  display: grid;
-  max-width: 100%;
-
 }
-.container{
-  display: flex;
-  
+.mat-h1{
+  margin: 16px;
 }
-
-
 .dashboard-card {
-  position:relative;
+  position: absolute;
   top: 15px;
   left: 15px;
   right: 15px;
   bottom: 15px;
-  max-width: 300px;
-  margin-left: 50px;
-  
-}
-
-.title {
-  text-align: center;
 }
 
 .more-button {
@@ -47,4 +21,3 @@ canvas {
 .dashboard-card-content {
   text-align: center;
 }
-
