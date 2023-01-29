@@ -1,5 +1,5 @@
 export interface Pep {
-  id?:string,
+  id?: string,
   pepNumber: string,
   patientId: string,
   doctorId: string,
@@ -9,4 +9,9 @@ export interface Pep {
   allergies?: string,
   createdAt?: any,
   updateAt?: any,
+}
+export interface PepLog {
+  pepId: string,
+  action: string,
+  createdAt: any,
 }
