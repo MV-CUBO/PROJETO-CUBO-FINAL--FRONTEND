@@ -38,8 +38,10 @@
 
         <mat-form-field>
             <mat-label>Observação</mat-label>
-            <input matInput placeholder="Observação" formControlName="observation"
+            <input matInput placeholder="Ex: n/a" formControlName="observation"
             [(ngModel)]="patient.observation" name="observation">
+            <mat-error *ngIf="formCadastro.get('observation')?.errors?.['required'] 
+            && formCadastro.get('observation')?.touched">Observação Obrigatória</mat-error>
         </mat-form-field>
 
         <mat-form-field>

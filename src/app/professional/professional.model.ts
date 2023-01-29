@@ -1,4 +1,15 @@
-import { Address } from './../patient/patient.component';
+
+
+export interface Address {
+  id?: string
+  zipCode: string
+  street: string
+  number: string
+  district: string
+  city: string
+  state: string
+  complements: string
+}
 
 
 export interface Professional {

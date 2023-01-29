@@ -38,8 +38,12 @@ export class PatientService {
  }
 
   createNewPatient(patient: Patient): void {
-
-     this.http.post(this.baseUrlPatient, patient)
+     const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+     };
+     this.http.post(this.baseUrlPatient, patient, httpOptions)
       .subscribe(res => {
         console.log(res);
       });

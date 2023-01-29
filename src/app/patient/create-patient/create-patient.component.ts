@@ -26,7 +26,7 @@ export class CreatePatientComponent implements OnInit{
     maritalStatus: ['', [Validators.required]],
     insuranceCompany: ['', [Validators.required]],
     healthInsurenceCard: ['', [Validators.required]],
-    observation: [''],
+    observation: ['', [Validators.required]],
     zipCode: ['', [Validators.required]],
     street: ['', [Validators.required]],
     number: ['', [Validators.required]],

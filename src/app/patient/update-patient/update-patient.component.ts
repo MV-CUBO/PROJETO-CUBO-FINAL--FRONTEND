@@ -11,27 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdatePatientComponent implements OnInit{
 
-  patient: Patient = {
-    name: '',
-    cpf: "",
-    dateOfBirth: '',
-    phone: '',
-    email: '',
-    gender: '',
-    maritalStatus: '',
-    insuranceCompany: '',
-    healthInsurenceCard: '',
-    observation: '',
-    address: {
-      zipCode: '',
-      street: '',
-      number: '',
-      district: '',
-      city: '',
-      state: '',
-      complements: ''
-    },
-  }
+  patient!: Patient 
 
   userPatient: UserPatient = {
     username: '',
@@ -62,8 +42,6 @@ export class UpdatePatientComponent implements OnInit{
       dateOfBirth: ['', [Validators.required]],
       phone: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
       gender: ['',[Validators.required]],
       maritalStatus: ['', [Validators.required]],
       insuranceCompany: ['', [Validators.required]],
