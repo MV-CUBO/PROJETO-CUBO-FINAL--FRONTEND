@@ -1,0 +1,70 @@
+{
+  "patients": [
+    {
+      "id": 1,
+      "name": "Matheus Lopes da Silva",
+      "cpf": "849340320-29",
+      "dateOfBirth": "2000-01-19",
+      "phone": "(81) 98803-2230",
+      "email": "matheus@gmail.com",
+      "gender": "MALE",
+      "maritalStatus": "SINGLE",
+      "insuranceCompany": "string",
+      "healthInsurenceCard": "string",
+      "observation": "string",
+      "address": {
+        "zipCode": "string",
+        "street": "string",
+        "number": "string",
+        "district": "string",
+        "city": "string",
+        "state": "string",
+        "complements": "string"
+      }
+    },
+    {
+      "name": "angelo",
+      "cpf": "12345678910",
+      "dateOfBirth": "2023-01-28T03:27:25.377Z",
+      "phone": "12345678910",
+      "email": "angeloguilhermino@gmail.com",
+      "gender": "MALE",
+      "maritalStatus": "SINGLE",
+      "insuranceCompany": "sulamerica",
+      "healtInsurenceCard": "123456",
+      "observation": "",
+      "address": {
+        "zipcode": "52210040",
+        "street": "rua",
+        "number": "145",
+        "district": "ajp",
+        "city": "recife",
+        "state": "pernambuco",
+        "complements": "casa"
+      },
+      "id": 2
+    },
+    {
+      "name": "mayk",
+      "cpf": "12345678910",
+      "dateOfBirth": "2023-01-28T03:27:25.377Z",
+      "phone": "12345678910",
+      "email": "angeloguilhermino@gmail.com",
+      "gender": "MALE",
+      "maritalStatus": "SINGLE",
+      "insuranceCompany": "sulamerica",
+      "healtInsurenceCard": "123456",
+      "observation": "",
+      "address": {
+        "zipcode": "52210040",
+        "street": "rua",
+        "number": "145",
+        "district": "ajp",
+        "city": "recife",
+        "state": "pernambuco",
+        "complements": "casa"
+      },
+      "id": 3
+    }
+  ]
+}

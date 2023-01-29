@@ -8,6 +8,8 @@ import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PepComponent } from './pep/pep.component';
 import { PepListComponent } from './pep/pep-list/pep-list.component';
+import { CreateDoctorComponent } from './professional/professional-create/create-doctor.component';
+import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'patient/pep', component: PepComponent },
   {
-    path: 'admin/listapep',
+    path: 'admin/lista-pep',
     component: PepListComponent,
     canActivate: [AuthGuard],
     data: {
@@ -34,6 +36,22 @@ const routes: Routes = [
     component: PatientComponent,
     canActivate: [AuthGuard],
     data: { roles: ['ROLE_PATIENT'] }
+  },
+  { 
+    path: 'admin/criar-profissional', 
+    component: CreateDoctorComponent ,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  { 
+    path: 'admin/criar-paciente', 
+    component: CreatePatientComponent ,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
 ]
 
