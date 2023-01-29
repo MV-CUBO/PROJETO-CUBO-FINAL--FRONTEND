@@ -45,5 +45,14 @@ export class PatientService {
       });
   }
 
+  readById(id: string): void {
+    const url = `${this.baseUrlPatient}/${id}`
+    this.http.get(url);
+  }
+
+  update(patient: Patient): void {
+    const url = `${this.baseUrlPatient}/${patient.id}`
+    this.http.put(url, patient);
+  }
   
 }

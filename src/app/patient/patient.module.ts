@@ -14,9 +14,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
 
 @NgModule({
-  declarations: [PatientComponent, CreatePatientComponent],
+  declarations: [PatientComponent, CreatePatientComponent, UpdatePatientComponent],
   imports: [
     CommonModule, 
     PatientRoutingModule,

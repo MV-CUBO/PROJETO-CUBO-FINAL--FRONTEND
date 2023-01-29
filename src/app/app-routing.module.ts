@@ -1,3 +1,4 @@
+import { UpdatePatientComponent } from './patient/update-patient/update-patient.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './access/login/login.component';
@@ -51,6 +52,14 @@ const routes: Routes = [
   {
     path: 'admin/criar-paciente',
     component: CreatePatientComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  {
+    path: 'admin/atualizar-paciente/:id',
+    component: UpdatePatientComponent,
     canActivate: [AuthGuard],
     data: {
       roles: ['ROLE_ADMIN']
