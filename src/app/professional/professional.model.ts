@@ -11,7 +11,6 @@ export interface Address {
   complements: string
 }
 
-
 export interface Professional {
     id?: string
     name: string

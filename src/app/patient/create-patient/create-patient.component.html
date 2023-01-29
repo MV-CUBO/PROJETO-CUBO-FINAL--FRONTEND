@@ -117,8 +117,8 @@
             <mat-label>Rua</mat-label>
             <input matInput placeholder="ex: Rua Oscar de Sá" formControlName="street"
             [(ngModel)]="patient.address.street" name="street">
-            <mat-error *ngIf="formCadastro.get('email')?.errors?.['required'] && 
-            formCadastro.get('email')?.touched">Especialidade Obrigatória</mat-error>
+            <mat-error *ngIf="formCadastro.get('street')?.errors?.['required'] && 
+            formCadastro.get('street')?.touched">Especialidade Obrigatória</mat-error>
         </mat-form-field>
 
         <mat-form-field>

@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UpdatePatientComponent implements OnInit{
 
     formCadastro!: FormGroup;
-  ngOnInit(): void {
+    ngOnInit(): void {
 
     const id = this.route.snapshot.paramMap.get('id');
     this.service.readById(id!).subscribe(patient => {

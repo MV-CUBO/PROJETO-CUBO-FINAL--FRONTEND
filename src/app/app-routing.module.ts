@@ -12,6 +12,7 @@ import { PepListComponent } from './pep/pep-list/pep-list.component';
 import { CreateDoctorComponent } from './professional/professional-create/create-doctor.component';
 import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 import { PepLogComponent } from './pep/pep-log/pep-log.component';
+import { UpdateProfessionalComponent } from './professional/update-professional/update-professional.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -60,6 +61,14 @@ const routes: Routes = [
   {
     path: 'admin/atualizar-paciente/:id',
     component: UpdatePatientComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  {
+    path: 'admin/atualizar-profissional/:id',
+    component: UpdateProfessionalComponent,
     canActivate: [AuthGuard],
     data: {
       roles: ['ROLE_ADMIN']
