@@ -40,6 +40,7 @@ export class LoginComponent {
   login() {
     this.authService.login(this.loginData.email, this.loginData.password)
       .subscribe(response => {
+        console.log(response);
         if (response.hasOwnProperty('token')) {
           localStorage.setItem('token', response.token);
           const decodedToken = this.authService.getDecodedToken(response.token);
