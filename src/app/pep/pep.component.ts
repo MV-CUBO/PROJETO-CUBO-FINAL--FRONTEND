@@ -5,7 +5,7 @@ import { PepService } from './pep.service';
 @Component({
   selector: 'app-pep',
   templateUrl: './pep.component.html',
-  styleUrls: ['./pep.component.css']
+  styleUrls: ['./pep.component.scss']
 })
 export class PepComponent implements OnInit {
   id: string = '45ac0636-bf54-4b01-98fe-52cf2134d142';

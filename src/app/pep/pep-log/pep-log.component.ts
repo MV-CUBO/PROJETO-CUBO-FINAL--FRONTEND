@@ -9,7 +9,7 @@ import { PepService } from '../pep.service';
 @Component({
   selector: 'app-pep-log',
   templateUrl: './pep-log.component.html',
-  styleUrls: ['./pep-log.component.css']
+  styleUrls: ['./pep-log.component.scss']
 })
 export class PepLogComponent implements OnInit {
   displayedColumns: string[] = ['pepId', 'action', 'createdAt'];
