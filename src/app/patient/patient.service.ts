@@ -38,11 +38,29 @@ export class PatientService {
  }
 
   createNewPatient(patient: Patient): void {
-
-     this.http.post(this.baseUrlPatient, patient)
+     const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+     };
+     this.http.post(this.baseUrlPatient, patient, httpOptions)
       .subscribe(res => {
         console.log(res);
       });
+  }
+
+  read(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(this.baseUrlPatient);
+  }
+
+  readById(id: string): Observable<Patient> {
+    const url = `${this.baseUrlPatient}/${id}`
+    return this.http.get<Patient>(url);
+  }
+
+  update(patient: Patient): Observable<Patient> {
+    const url = `${this.baseUrlPatient}/${patient.id}`
+    return this.http.put<Patient>(url, patient);
   }
 
   

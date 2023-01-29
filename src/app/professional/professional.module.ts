@@ -12,12 +12,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UpdateProfessionalComponent } from './update-professional/update-professional.component';
 
 
 
 
 @NgModule({
-  declarations: [CreateDoctorComponent],
+  declarations: [CreateDoctorComponent, UpdateProfessionalComponent],
   imports: [
     CommonModule, 
     PatientRoutingModule,

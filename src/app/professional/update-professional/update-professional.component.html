@@ -1,54 +1,50 @@
 <mat-card>
-
-    <mat-card-title>Cadastrar Paciente</mat-card-title>
+    
+    <mat-card-title>Atualizar Médico</mat-card-title>
 
     <form [formGroup]="formCadastro">
-
         <mat-form-field>
             <mat-label>Nome</mat-label>
             <input matInput placeholder="Nome completo" formControlName="name" 
-            [(ngModel)]="patient.name" name="name">
+            [(ngModel)]="professional.name">
             <mat-error *ngIf="formCadastro.get('name')?.errors?.['required'] && 
             formCadastro.get('name')?.touched">Nome Obrigatório</mat-error>
         </mat-form-field>
-
+        
         <mat-form-field>
             <mat-label>CPF</mat-label>
             <input matInput placeholder="apenas digitos" formControlName="cpf"
-            [(ngModel)]="patient.cpf" name="cpf">
+            [(ngModel)]="professional.cpf" readonly>
             <mat-error *ngIf="formCadastro.get('cpf')?.errors?.['required'] && 
             formCadastro.get('cpf')?.touched">CPF Obrigatório</mat-error>
         </mat-form-field>
 
         <mat-form-field>
-            <mat-label>Convênio</mat-label>
-            <input matInput placeholder="Convênio" formControlName="insuranceCompany"
-            [(ngModel)]="patient.insuranceCompany" name="insuranceCompany">
-            <mat-error *ngIf="formCadastro.get('insuranceCompany')?.errors?.['required'] && 
-            formCadastro.get('insuranceCompany')?.touched">Campo Obrigatório</mat-error>
+            <mat-label>CRM</mat-label>
+            <input matInput placeholder="CRM*" formControlName="crm"
+            [(ngModel)]="professional.crm">
+            <mat-error *ngIf="formCadastro.get('crm')?.errors?.['required'] && 
+            formCadastro.get('crm')?.touched">CRM Obrigatório</mat-error>
         </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>healthInsurenceCard</mat-label>
-            <input matInput placeholder="Número do cartão" formControlName="healthInsurenceCard"
-            [(ngModel)]="patient.healthInsurenceCard" name="healtInsurenceCard">
-            <mat-error *ngIf="formCadastro.get('healtInsurenceCard')?.errors?.['required'] 
-            && formCadastro.get('healtInsurenceCard')?.touched">Campo Obrigatório</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Observação</mat-label>
-            <input matInput placeholder="Ex: n/a" formControlName="observation"
-            [(ngModel)]="patient.observation" name="observation">
-            <mat-error *ngIf="formCadastro.get('observation')?.errors?.['required'] 
-            && formCadastro.get('observation')?.touched">Observação Obrigatória</mat-error>
+        <mat-form-field appearance="fill" >
+            <mat-label>Especialidade</mat-label>
+            <mat-select formControlName="specialty"
+            [(ngModel)]="professional.specialty">
+            <mat-option *ngFor="let especialidade of especialidade" 
+            [value]="especialidade.value">
+            {{especialidade.viewValue}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="formCadastro.get('specialty')?.errors?.['required'] && 
+        formCadastro.get('specialty')?.touched">Especialidade Obrigatória</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Data de nascimento</mat-label>
             <input matInput [matDatepicker]="picker" 
              placeholder="Data de Nascimento" formControlName="dateOfBirth"
-            [(ngModel)]="patient.dateOfBirth" name="dateOfBirth">
+            [(ngModel)]="professional.dateOfBirth">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="formCadastro.get('dateOfBirth')?.errors?.['required'] && 
@@ -58,7 +54,7 @@
         <mat-form-field>
             <mat-label>Telefone</mat-label>
             <input matInput placeholder="Telefone" formControlName="phone"
-            [(ngModel)]="patient.phone" name="phone">
+            [(ngModel)]="professional.phone">
             <mat-error *ngIf="formCadastro.get('phone')?.errors?.['required'] && 
             formCadastro.get('phone')?.touched">Telefone Obrigatório</mat-error>
         </mat-form-field>
@@ -66,27 +62,15 @@
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput placeholder="Email*" type="email" formControlName="email"
-            [(ngModel)]="patient.email" [(ngModel)]="userPatient.username" name="email">
+            [(ngModel)]="professional.email" [(ngModel)]="userDoctor.username">
             <mat-error *ngIf="formCadastro.get('email')?.errors?.['required'] && 
-            formCadastro.get('email')?.touched">Email Obrigatório</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Senha</mat-label>
-            <input type="password" matInput placeholder="Mínimo 6 dígitos" formControlName="password"
-            [(ngModel)]="userPatient.password" name="password">
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Confirmar Senha</mat-label>
-            <input type="password" matInput placeholder="Confirmar Senha" 
-            formControlName="confirmPassword">
+            formCadastro.get('email')?.touched">Especialidade Obrigatória</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill" >
             <mat-label>Genero</mat-label>
             <mat-select formControlName="gender"
-            [(ngModel)]="patient.gender" name >
+            [(ngModel)]="professional.gender">
             <mat-option *ngFor="let genero of generos" [value]="genero.value">
             {{genero.viewValue}}
             </mat-option>
@@ -96,7 +80,7 @@
         <mat-form-field appearance="fill" >
             <mat-label>Estado Civil</mat-label>
             <mat-select formControlName="maritalStatus"
-            [(ngModel)]="patient.maritalStatus">
+            [(ngModel)]="professional.maritalStatus">
             <mat-option *ngFor="let estadoCivil of estadoCivil" [value]="estadoCivil.value">
             {{estadoCivil.viewValue}}
             </mat-option>
@@ -108,23 +92,23 @@
         <mat-form-field>
             <mat-label>CEP</mat-label>
             <input matInput placeholder="CEP" formControlName="zipCode"
-            [(ngModel)]="patient.address.zipCode" name="zipCode">
-            <mat-error *ngIf="formCadastro.get('zipcode')?.errors?.['required'] 
-            && formCadastro.get('zipCode')?.touched">CEP Obrigatório</mat-error>
+            [(ngModel)]="professional.address.zipCode">
+            <mat-error *ngIf="formCadastro.get('zipCode')?.errors?.['required'] && 
+            formCadastro.get('zipCode')?.touched">CEP Obrigatório</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Rua</mat-label>
             <input matInput placeholder="ex: Rua Oscar de Sá" formControlName="street"
-            [(ngModel)]="patient.address.street" name="street">
+            [(ngModel)]="professional.address.street">
             <mat-error *ngIf="formCadastro.get('street')?.errors?.['required'] && 
-            formCadastro.get('street')?.touched">Especialidade Obrigatória</mat-error>
+            formCadastro.get('street')?.touched">Campo Obrigatório</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <mat-label>Número</mat-label>
             <input matInput placeholder="Número residência" formControlName="number"
-            [(ngModel)]="patient.address.number" name="number">
+            [(ngModel)]="professional.address.number">
             <mat-error *ngIf="formCadastro.get('number')?.errors?.['required'] && 
             formCadastro.get('number')?.touched">Número Obrigatório</mat-error>
         </mat-form-field>
@@ -132,7 +116,7 @@
         <mat-form-field>
             <mat-label>Bairro</mat-label>
             <input matInput placeholder="Ex: Prado" formControlName="district"
-            [(ngModel)]="patient.address.district" name="district">
+            [(ngModel)]="professional.address.district">
             <mat-error *ngIf="formCadastro.get('district')?.errors?.['required'] && 
             formCadastro.get('district')?.touched">Bairro Obrigatório</mat-error>
         </mat-form-field>
@@ -140,7 +124,7 @@
         <mat-form-field>
             <mat-label>Cidade</mat-label>
             <input matInput placeholder="Ex: Recife" formControlName="city"
-            [(ngModel)]="patient.address.city" name="city">
+            [(ngModel)]="professional.address.city">
             <mat-error *ngIf="formCadastro.get('city')?.errors?.['required'] && 
             formCadastro.get('city')?.touched">Cidade Obrigatória</mat-error>
         </mat-form-field>
@@ -148,7 +132,7 @@
         <mat-form-field>
             <mat-label>Estado</mat-label>
             <input matInput placeholder="Ex: Pernambuco" formControlName="state"
-            [(ngModel)]="patient.address.state" name="state">
+            [(ngModel)]="professional.address.state">
             <mat-error *ngIf="formCadastro.get('state')?.errors?.['required'] && 
             formCadastro.get('state')?.touched">Estado Obrigatório</mat-error>
         </mat-form-field>
@@ -156,13 +140,16 @@
         <mat-form-field>
             <mat-label>Complemento</mat-label>
             <input matInput placeholder="Ex: casa A" formControlName="complements"
-            [(ngModel)]="patient.address.complements" name="complements">
+            [(ngModel)]="professional.address.complements">
+            <mat-error *ngIf="formCadastro.get('complements')?.errors?.['required'] && 
+            formCadastro.get('complements')?.touched">Complemento Obrigatório</mat-error>
         </mat-form-field>
+    
     </form>
 
     <button [disabled]="!formCadastro.valid" mat-raised-button 
-    (click)="createPatient()" color="primary">
-        Salvar
+    (click)="updateDoctor()" color="primary">
+        Atualizar
     </button>
 
     <button mat-raised-button (click)="cancel()">
@@ -170,5 +157,3 @@
     </button>
 
 </mat-card>
-
-

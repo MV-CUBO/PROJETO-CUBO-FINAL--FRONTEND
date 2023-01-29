@@ -1,4 +1,3 @@
-<!-- <p>register works!</p> -->
 <mat-card>
     
     <mat-card-title>Cadastrar Médico</mat-card-title>
@@ -114,8 +113,8 @@
             <mat-label>Rua</mat-label>
             <input matInput placeholder="ex: Rua Oscar de Sá" formControlName="street"
             [(ngModel)]="professional.address.street">
-            <mat-error *ngIf="formCadastro.get('email')?.errors?.['required'] && 
-            formCadastro.get('email')?.touched">Especialidade Obrigatória</mat-error>
+            <mat-error *ngIf="formCadastro.get('street')?.errors?.['required'] && 
+            formCadastro.get('street')?.touched">Campo Obrigatório</mat-error>
         </mat-form-field>
 
         <mat-form-field>
