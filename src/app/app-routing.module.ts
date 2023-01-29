@@ -16,54 +16,54 @@ const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'admin',
-    component: AdminComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-      //   roles: ['ROLE_ADMIN']
-      // }
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: {
+        roles: ['ROLE_ADMIN']
+      }
     },
     
     { path: 'patient/pep', component: PepComponent },
     {
       path: 'admin/lista-pep',
     component: PepListComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-      //   roles: ['ROLE_ADMIN']
-      // }
+    canActivate: [AuthGuard],
+    data: {
+        roles: ['ROLE_ADMIN']
+      }
     },
   {
     path: 'patient',
     component: PatientComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-    //   roles: ['ROLE_PATIENT']
-    // }
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_PATIENT']
+    }
   },
   { path: 'admin/dashboard', component: DashboardComponent},
   {
     path: 'admin/criar-profissional',
     component: CreateDoctorComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-    //   roles: ['ROLE_ADMIN']
-    // }
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
   {
     path: 'admin/criar-paciente',
     component: CreatePatientComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-    //   roles: ['ROLE_ADMIN']
-    // }
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
   {
     path: 'admin/pep-log',
     component: PepLogComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-    //   roles: ['ROLE_ADMIN']
-    // }
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
 ]
 
