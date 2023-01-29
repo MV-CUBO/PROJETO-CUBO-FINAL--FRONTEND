@@ -16,6 +16,7 @@ import { AuthInterceptor } from './access/auth/authInterceptor';
 import { PatientModule } from './patient/patient.module';
 import { ProfessionalModule } from './professional/professional.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { RodapeComponent } from './rodape/rodape.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     SidenavComponent,
     DashboardComponent,
     PepCreateComponent,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     LoginModule,
     PepModule,
     PatientModule,
-    ProfessionalModule
+    ProfessionalModule,
   ],
   providers: [
     {
