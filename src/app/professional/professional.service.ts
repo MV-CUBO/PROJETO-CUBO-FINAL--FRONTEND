@@ -10,10 +10,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProfessionalService {
 
-  baseUrlDoctor = "http://localhost:5000/api/doctor";
-  baseUrlUser = "http://localhost:5000/api/users";
+  private readonly API_DOCTOR = "http://localhost:5000/api/doctor";
+  private readonly API_USER = "http://localhost:5000/api/users";
 
-  
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -31,7 +30,7 @@ export class ProfessionalService {
        'Content-Type': 'application/json'
      })
     };
-    this.http.post(this.baseUrlUser, userDoctor, httpOptions)
+    this.http.post(this.API_USER, userDoctor, httpOptions)
      .subscribe(res => {
        console.log(res);
      });
@@ -43,11 +42,11 @@ export class ProfessionalService {
         'Content-Type': 'application/json'
       })
      };
-     this.http.post(this.baseUrlDoctor, doctor, httpOptions)
+     this.http.post(this.API_DOCTOR, doctor, httpOptions)
       .subscribe(res => {
         console.log(res);
       });
   }
 
-  
+
 }

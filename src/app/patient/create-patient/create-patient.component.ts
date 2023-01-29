@@ -1,9 +1,8 @@
-import { EstadoCivil, Genero, Novo } from './../patient.component';
 import { PatientService } from './../patient.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Patient, UserPatient } from '../patient.component';
 import { Router } from '@angular/router';
+import { Gender, CivilState, User, Novo, Patient } from '../patient';
 
 @Component({
   selector: 'app-create-patient',
@@ -59,7 +58,7 @@ export class CreatePatientComponent implements OnInit{
     },
   }
 
-  userPatient: UserPatient = {
+  userPatient: User = {
     username: '',
     password: '',
     role: ['ROLE_PATIENT']
@@ -77,20 +76,19 @@ export class CreatePatientComponent implements OnInit{
     this.patientService.createNewPatient(this.patient);
     this.patientService.createUserPatient(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
-    console.log(this.patient);
-    console.log(this.userPatient);
+    console.log(this.patient, this.userPatient)
   }
 
   cancel(): void {
     this.router.navigate(['/login'])
   }
 
-  generos: Genero[] = [
+  generos: Gender[] = [
     {value: 'MALE', viewValue: 'Masculino'},
     {value: 'FEMALE', viewValue: 'Feminino'},
   ];
 
-  estadoCivil: EstadoCivil[] = [
+  estadoCivil: CivilState[] = [
     {value: 'SINGLE', viewValue: 'Solteiro(a)'},
     {value: 'MARRIED', viewValue: 'Casado(a)'},
     {value: 'DIVORCED', viewValue: 'Divorciado(a)'},

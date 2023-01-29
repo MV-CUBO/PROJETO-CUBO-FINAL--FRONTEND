@@ -1,6 +1,3 @@
-import { Address } from './../patient/patient.component';
-
-
 export interface Professional {
     id?: string
     name: string
@@ -14,6 +11,18 @@ export interface Professional {
     crm: string
     specialty: string
 }
+
+export interface Address {
+  id?: string
+  zipCode: string
+  street: string
+  number: string
+  district: string
+  city: string
+  state: string
+  complements: string
+}
+
 
 export interface UserDoctor {
     username: string

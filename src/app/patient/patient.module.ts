@@ -13,7 +13,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule  } from '@angular/common/http';
 import { PatientListComponent } from './patient-list/patient-list.component';
 
 @NgModule({
