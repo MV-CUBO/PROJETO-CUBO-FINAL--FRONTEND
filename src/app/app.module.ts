@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
 import { PepCreateComponent } from './pep/pep-create/pep-create.component';
 import { PepModule } from './pep/pep.module';
+import { AuthInterceptor } from './access/auth/authInterceptor';
+import { PatientModule } from './patient/patient.module';
 
 
 @NgModule({
@@ -26,11 +29,19 @@ import { PepModule } from './pep/pep.module';
     AppRoutingModule,
     HttpClientModule,
     LoginModule,
-    PepModule
+    PepModule,
+    PatientModule,
+
 
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

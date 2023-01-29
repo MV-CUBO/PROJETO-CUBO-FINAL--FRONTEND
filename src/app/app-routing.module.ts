@@ -9,27 +9,44 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PepComponent } from './pep/pep.component';
 import { PepCreateComponent } from './pep/pep-create/pep-create.component';
 import { PepListComponent } from './pep/pep-list/pep-list.component';
+import { PatientListComponent } from './patient/patient-list/patient-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'createpep', component: PepCreateComponent },
   {
+
     path: 'admin',
     component: AdminComponent,
-    children: [{ path: 'dashboard', component: DashboardComponent}]
-    // canActivate: [AuthGuard],
-    // data: { roles: ['admin'] }
+    canActivate: [AuthGuard],
+     data: {
+      roles: ['ROLE_ADMIN']
+    }
   },
-  { path: 'patient/pep', component: PepComponent},
-  { path: 'admin/listapep', component: PepListComponent},
+  { path: 'patient/pep', component: PepComponent },
+  {
+    path: 'admin/listapep',
+    component: PepListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
   {
     path: 'patient',
     component: PatientComponent,
-    children: [{ path: 'dashboard', component: DashboardComponent }]
-    // canActivate: [AuthGuard],
-    // data: { roles: ['patient'] }
+    canActivate: [AuthGuard],
+    data: { roles: ['ROLE_PATIENT'] }
   },
+
+  {path: 'patientlist', component: PatientListComponent},
+
+  {
+    path: 'admin/lista-paciente',
+    component: PatientListComponent,
+  
+    }
 ]
 
 @NgModule({

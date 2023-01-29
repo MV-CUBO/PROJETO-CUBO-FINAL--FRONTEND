@@ -8,7 +8,7 @@ import { PepService } from './pep.service';
   styleUrls: ['./pep.component.css']
 })
 export class PepComponent implements OnInit {
-  id: string = '';
+  id: string = '45ac0636-bf54-4b01-98fe-52cf2134d142';
   pep: Pep = {
     pepNumber: '',
     patientId: '',
@@ -25,10 +25,9 @@ export class PepComponent implements OnInit {
     this.getPep(this.id);
   }
 
+
   getPep(id: string){
     this.service.getPepId(id).subscribe((res) => {this.pep = res;})
   }
-
-
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { Pep, PepCreate } from './pep';
@@ -42,6 +42,5 @@ export class PepService {
   createPep(pep: PepCreate): Observable<PepCreate> {
     return this.http.post<PepCreate>(this.API, pep);
   }
-
 
 }

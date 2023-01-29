@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private token: string = '';
+
+  private readonly API = 'http://localhost:5000/api/auth/login'
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post<any>('/api/login', { username, password });
+  login(email: string, password: string): Observable<any> {
+    return this.http.post<any>(this.API, { email, password });
   }
 
   logout() {
@@ -25,7 +26,11 @@ export class AuthService {
     return localStorage.getItem('token') !== null;
   }
 
-  getDecodedToken(): any {
-    return jwtDecode(this.token);
+  getToken(){
+    return localStorage.getItem('token')
+  }
+
+  getDecodedToken(token: any): any {
+    return jwtDecode(token);
   }
 }

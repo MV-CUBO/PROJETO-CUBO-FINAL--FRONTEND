@@ -73,9 +73,7 @@ export class SidenavComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const userInfo = this.authService.getDecodedToken()
     this.screenWidth = window.innerWidth;
-    this.userId = userInfo.id
   }
 
   toggleCollapse(): void {

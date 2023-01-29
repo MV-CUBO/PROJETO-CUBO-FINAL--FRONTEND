@@ -11,11 +11,11 @@
   <ul class="sidenav-nav">
     <ng-container *ngIf="isPatient()">
       <li class="sidenav-nav-item">
-        <a class="sidenav-nav-link" [routerLink]="[navDataPatient.routeLink]" routerLinkActive="active"
+        <a class="sidenav-nav-link" routerLink="/patient/pep" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">
-          <i class="sidenav-link-icon" [class]="navDataPatient.icon"></i>
+          <i class="sidenav-link-icon fal fa-clipboard"></i>
           <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
-            {{navDataPatient.label}}
+            Prontuario
           </span>
         </a>
       </li>
