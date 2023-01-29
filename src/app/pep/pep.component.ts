@@ -8,26 +8,29 @@ import { PepService } from './pep.service';
   styleUrls: ['./pep.component.scss']
 })
 export class PepComponent implements OnInit {
-  id: string = '45ac0636-bf54-4b01-98fe-52cf2134d142';
-  pep: Pep = {
+    pep: Pep = {
+    id: '',
     pepNumber: '',
     patientId: '',
-    doctorId:'',
-    status:'',
-    prescription:'',
-    bloodType:'',
-    allergies:'',
+    doctorId: '',
+    status: '',
+    prescription: '',
+    bloodType: '',
+    allergies: '',
   }
 
-  constructor(private service: PepService){}
+  constructor(private service: PepService) { }
 
-  ngOnInit(){
-    this.getPep(this.id);
+  ngOnInit() {
+    this.getPep();
   }
 
-
-  getPep(id: string){
-    this.service.getPepId(id).subscribe((res) => {this.pep = res})
+  getPep() {
+    this.service.getAll().subscribe((res) => {
+      this.pep = res[0];
+      this.pep.createdAt = new Date(res[0].createdAt).toLocaleString('pt-BR');
+      this.pep.updateAt = new Date(res[0].updateAt).toLocaleString('pt-BR');
+    })
   }
 
 }
