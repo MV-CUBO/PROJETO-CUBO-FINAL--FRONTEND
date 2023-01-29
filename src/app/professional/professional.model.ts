@@ -6,7 +6,7 @@ export interface Professional {
     name: string
     cpf: string
     address: Address,
-    dateOfBirth: Date
+    dateOfBirth: string
     phone: string
     email: string
     gender: string
@@ -18,7 +18,7 @@ export interface Professional {
 export interface UserDoctor {
     username: string
     password: string
-    role: string
+    role: string[]
 }
 
 export interface Genero {

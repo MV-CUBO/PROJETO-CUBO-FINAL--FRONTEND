@@ -49,7 +49,7 @@ export class CreateDoctorComponent implements OnInit{
       state: '',
       complements: ''
     },
-    dateOfBirth: new Date(),
+    dateOfBirth: '',
     phone: '',
     email: '',
     gender: '',
@@ -61,7 +61,7 @@ export class CreateDoctorComponent implements OnInit{
   userDoctor: UserDoctor = {
     username: '',
     password: '',
-    role: 'ROLE_DOCTOR'
+    role: ['ROLE_DOCTOR']
   }
 
   constructor(private professionalService: ProfessionalService,
