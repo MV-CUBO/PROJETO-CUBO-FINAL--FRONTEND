@@ -12,6 +12,8 @@ export interface Pep {
 }
 export interface PepLog {
   pepId: string,
+  patient: string,
+  doctor: string,
   action: string,
   createdAt: any,
 }
