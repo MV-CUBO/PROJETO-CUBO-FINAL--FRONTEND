@@ -77,6 +77,7 @@ export class CreatePatientComponent implements OnInit{
     this.patientService.createNewPatient(this.patient);
     this.patientService.createUserPatient(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
+    this.router.navigate(["/admin/lista-paciente"]);
   }
 
   cancel(): void {

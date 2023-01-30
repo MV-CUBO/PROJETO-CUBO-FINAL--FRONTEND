@@ -52,7 +52,7 @@ constructor(
 updateDoctor(): void{
   this.service.update(this.professional).subscribe(() => {
     this.service.showMessage('Paciente atualizado com sucesso!');
-    this.router.navigate(["/admin"]);
+    this.router.navigate(["/admin/listar-profissional"]);
   })
 }
 

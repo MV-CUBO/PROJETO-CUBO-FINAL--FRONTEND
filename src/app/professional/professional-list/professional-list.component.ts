@@ -36,10 +36,7 @@ export class ProfessionalListComponent implements OnInit {
     })
   }
 
-  delete(id:string): void{
-    this.service.deleteDoctorId(id).subscribe(() =>{
-    })
-  }
+
 
   filterTable(event: Event) {
     const filvalue = (event.target as HTMLInputElement).value;
