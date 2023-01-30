@@ -46,6 +46,12 @@ export class PatientListComponent  implements OnInit{
     })
   }
 
+  delete(id: string): void{
+    this.service.deletePatient(id).subscribe(() => {
+      this.service.showMessage('Paciente Deletado com sucesso!')
+    })
+  }
+
   filterTable(event: Event){
     const filvalue=(event.target as HTMLInputElement).value;
     this.dataSource.filter = filvalue;
@@ -55,7 +61,7 @@ export class PatientListComponent  implements OnInit{
     console.log(row)
   }
   edit(row:any){
-    console.log(row)
+    this.service.update(row)
   }
 
 }

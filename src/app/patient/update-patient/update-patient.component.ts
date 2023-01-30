@@ -57,9 +57,11 @@ export class UpdatePatientComponent implements OnInit{
     })
   }
 
+
   cancel(): void{
     this.router.navigate(["/admin"])
   }
+
 
   patient: Patient = {
     name: '',
@@ -99,4 +101,5 @@ export class UpdatePatientComponent implements OnInit{
     {value: 'MARRIED', viewValue: 'Casado(a)'},
     {value: 'DIVORCED', viewValue: 'Divorciado(a)'},
   ];
+  
 }
