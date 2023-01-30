@@ -43,7 +43,13 @@ const routes: Routes = [
       roles: ['ROLE_PATIENT']
     }
   },
-  { path: 'admin/dashboard', component: DashboardComponent},
+  { path: 'admin/dashboard', 
+  component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+},
   {
     path: 'admin/criar-profissional',
     component: CreateDoctorComponent,
