@@ -53,7 +53,7 @@ export class UpdatePatientComponent implements OnInit{
   updatePatient(): void{
     this.service.update(this.patient).subscribe(() => {
       this.service.showMessage('Paciente atualizado com sucesso!');
-      this.router.navigate(["/admin"]);
+      this.router.navigate(["/admin/lista-paciente"]);
     })
   }
 
