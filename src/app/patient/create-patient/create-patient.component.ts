@@ -25,7 +25,7 @@ export class CreatePatientComponent implements OnInit{
     maritalStatus: ['', [Validators.required]],
     insuranceCompany: ['', [Validators.required]],
     healthInsurenceCard: ['', [Validators.required]],
-    observation: [''],
+    observation: ['', [Validators.required]],
     zipCode: ['', [Validators.required]],
     street: ['', [Validators.required]],
     number: ['', [Validators.required]],
@@ -76,7 +76,11 @@ export class CreatePatientComponent implements OnInit{
     this.patientService.createNewPatient(this.patient);
     this.patientService.createUserPatient(this.userPatient)
     this.patientService.showMessage("Cadastrado com sucesso!");
+<<<<<<< HEAD
     console.log(this.patient, this.userPatient)
+=======
+    this.router.navigate(["/admin/lista-paciente"]);
+>>>>>>> 2151bf63626feccbe59a131c288cdffbfadf9195
   }
 
   cancel(): void {

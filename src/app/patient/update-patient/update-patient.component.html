@@ -1,6 +1,6 @@
 <mat-card>
 
-    <mat-card-title>Cadastrar Paciente</mat-card-title>
+    <mat-card-title>Atualizar Paciente</mat-card-title>
 
     <form [formGroup]="formCadastro">
 
@@ -15,7 +15,7 @@
         <mat-form-field>
             <mat-label>CPF</mat-label>
             <input matInput placeholder="apenas digitos" formControlName="cpf"
-            [(ngModel)]="patient.cpf" name="cpf">
+            [(ngModel)]="patient.cpf" name="cpf" readonly>
             <mat-error *ngIf="formCadastro.get('cpf')?.errors?.['required'] && 
             formCadastro.get('cpf')?.touched">CPF Obrigatório</mat-error>
         </mat-form-field>
@@ -38,10 +38,8 @@
 
         <mat-form-field>
             <mat-label>Observação</mat-label>
-            <input matInput placeholder="Ex: n/a" formControlName="observation"
+            <input matInput placeholder="Observação" formControlName="observation"
             [(ngModel)]="patient.observation" name="observation">
-            <mat-error *ngIf="formCadastro.get('observation')?.errors?.['required'] 
-            && formCadastro.get('observation')?.touched">Observação Obrigatória</mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -69,18 +67,6 @@
             [(ngModel)]="patient.email" [(ngModel)]="userPatient.username" name="email">
             <mat-error *ngIf="formCadastro.get('email')?.errors?.['required'] && 
             formCadastro.get('email')?.touched">Email Obrigatório</mat-error>
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Senha</mat-label>
-            <input type="password" matInput placeholder="Mínimo 6 dígitos" formControlName="password"
-            [(ngModel)]="userPatient.password" name="password">
-        </mat-form-field>
-
-        <mat-form-field>
-            <mat-label>Confirmar Senha</mat-label>
-            <input type="password" matInput placeholder="Confirmar Senha" 
-            formControlName="confirmPassword">
         </mat-form-field>
 
         <mat-form-field appearance="fill" >
@@ -161,8 +147,8 @@
     </form>
 
     <button [disabled]="!formCadastro.valid" mat-raised-button 
-    (click)="createPatient()" color="primary">
-        Salvar
+    (click)="updatePatient()" color="primary">
+        Atualizar
     </button>
 
     <button mat-raised-button (click)="cancel()">

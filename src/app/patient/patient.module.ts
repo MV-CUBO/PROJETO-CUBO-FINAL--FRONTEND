@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -13,11 +14,17 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule  } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
-  declarations: [PatientComponent, CreatePatientComponent, PatientListComponent],
+  declarations: [PatientComponent, CreatePatientComponent, PatientListComponent, UpdatePatientComponent],
   imports: [
     CommonModule, 
     PatientRoutingModule,
@@ -32,6 +39,11 @@ import { PatientListComponent } from './patient-list/patient-list.component';
     MatSnackBarModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatGridListModule,
+    MatIconModule
   ],
 })
 export class PatientModule {}
