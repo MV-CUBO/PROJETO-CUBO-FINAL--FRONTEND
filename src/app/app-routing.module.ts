@@ -2,7 +2,6 @@ import { UpdatePatientComponent } from './patient/update-patient/update-patient.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './access/login/login.component';
-import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -11,6 +10,7 @@ import { PepListComponent } from './pep/pep-list/pep-list.component';
 import { CreateDoctorComponent } from './professional/professional-create/create-doctor.component';
 import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 import { PepLogComponent } from './pep/pep-log/pep-log.component';
+import { ProfessionalListComponent } from './professional/professional-list/professional-list.component';
 import { UpdateProfessionalComponent } from './professional/update-professional/update-professional.component';
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
 
@@ -47,6 +47,14 @@ const routes: Routes = [
   {
     path: 'admin/criar-profissional',
     component: CreateDoctorComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+   },
+  {
+    path: 'admin/listar-profissional',
+    component: ProfessionalListComponent,
     canActivate: [AuthGuard],
     data: {
       roles: ['ROLE_ADMIN']

@@ -33,6 +33,7 @@ import { ProfessionalModule } from './professional/professional.module';
     LoginModule,
     PepModule,
     PatientModule,
+    ProfessionalModule,
     DashboardModule,
     ProfessionalModule
   ],
