@@ -1,0 +1,36 @@
+<div class="grid-container">
+  <h1 class="mat-h1"><strong>DASHBOARD</strong></h1>
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile colspan="2" rowspan="1">
+      <mat-card class="dashboard-card">
+        <canvas baseChart class="chart" [data]="statusPatientChartData" [type]="statusPatientChartType"></canvas>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="3" rowHeight="450px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">Pacientes por sexo</mat-card-content>
+        <div>
+          <canvas id="grafico" baseChart class="chart" [data]="patientGenderChartData" [type]="patientGenderChartType"></canvas>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">Médicos por status</mat-card-content>
+        <div>
+          <canvas baseChart class="chart" [data]="doctorChartData" [type]="doctorChartType"></canvas>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-content class="dashboard-card-content">Pacientes por status</mat-card-content>
+        <div>
+        <canvas baseChart class="chart" [data]="patientStatusChartData" [type]="patientStatusChartType"></canvas>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
