@@ -1,1 +1,78 @@
-<p>pep-create works!</p>
+<h1 class="card-title"><strong>Prontuário Médico</strong></h1>
+
+<mat-card class="container-model">
+
+
+      <h2>Preencha os dados</h2>
+      <br>  
+   
+      <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Identificação do paciente:</mat-label>
+          <input matInput
+           placeholder="Identificação"
+           type="text"
+           class="form-control"
+           [(ngModel)]="pep.patient_id" name="patient">
+      </mat-form-field>
+      <br>
+
+    
+      <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Identificação do médico:</mat-label>
+          <input matInput placeholder="Identificação" 
+          type="text" 
+          class="form-control " 
+          [(ngModel)]="pep.doctor_id" 
+          name="doctor" >
+      </mat-form-field>
+    
+    <br>
+      
+      <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Status</mat-label>
+          <textarea matInput 
+          type="text" 
+          class="form-control"
+          [(ngModel)]="pep.status" 
+          name="status"></textarea>
+        </mat-form-field>
+    
+    
+      <br>
+      <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Perscrição</mat-label>
+          <textarea matInput 
+          placeholder="Perscrição"  
+          class="form-control "
+          type="text" 
+          [(ngModel)]="pep.prescription"
+           name="prescription"></textarea>
+        </mat-form-field>
+   
+    <br>
+    
+      <mat-form-field class="input-full-width" appearance="fill">
+          <mat-label>Observação</mat-label>
+          <textarea matInput 
+          placeholder="Observação"  
+          type="text"
+          class="form-control " 
+          [(ngModel)]="pep.observation" 
+          name="observation"></textarea>
+        </mat-form-field>
+    
+    <br>
+    <section>
+      <button mat-raised-button color="primary">Editar</button>
+      
+      <button mat-raised-button color="primary" (click)="send()">Concluir</button>
+    </section>
+ 
+
+</mat-card>
+  
+  
+  
+  
+
+ 

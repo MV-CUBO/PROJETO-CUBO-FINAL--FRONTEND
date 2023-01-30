@@ -7,6 +7,11 @@
 
 <div class="mat-elevation-z8">
   <div class="card-head">
+    <button id="botao" mat-raised-button color="primary">
+      <a href="/admin/create-pep">
+        Criar PEP
+      </a>
+    </button>
       <mat-form-field>
         <mat-label>Filtro</mat-label>
         <input matInput (keyup)="filterTable($event)" placeholder="Ex. Mia" #input>
@@ -43,10 +48,6 @@
           <button mat-raised-button (click)="edit(element.id)" color="primary">
             Edit
           </button>
-          <!-- |
-          <button mat-raised-button color="accent">
-            Delete
-          </button> -->
         </td>
       </ng-container>
 

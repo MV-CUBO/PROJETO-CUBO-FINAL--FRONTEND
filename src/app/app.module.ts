@@ -9,7 +9,6 @@ import { BodyComponent } from './body/body.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './access/login/login.module';
-import { PepCreateComponent } from './pep/pep-create/pep-create.component';
 import { PepModule } from './pep/pep.module';
 import { AuthInterceptor } from './access/auth/authInterceptor';
 import { PatientModule } from './patient/patient.module';
@@ -30,7 +29,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     BodyComponent,
     SidenavComponent,
-    PepCreateComponent,
     DashboardComponent
   ],
   imports: [
