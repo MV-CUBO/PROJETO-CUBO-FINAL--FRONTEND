@@ -90,6 +90,7 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 	<th><a href="https://github.com/RafaelTomas"><strong> Rafael Tomas </strong><a></th>
          <th><a href="https://github.com/0Guilhermino"><strong> Angelo Guilhermino </strong><a></th>
          <th><a href="https://github.com/laryribeir0"><strong>Laryssa Ribeiro</strong><a><th>
+         <th><a href="https://github.com/liedsonft"><strong>Liedson Alves</strong><a><th>
   </tr>
     <td align="center">
       <a href="https://mv.com.br">
@@ -112,7 +113,7 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
         </sub>
     </td>
      <td align="center">
-      <a href="https://github.com/RafaelTomas">
+      <a href="https://github.com/0Guilhermino">
         <img src="https://avatars.githubusercontent.com/u/50936600?s=400&u=7467a64e09c5429efda547d701a4b0aace169f0a&v=4" width="110"/></a><br>
         <sub>
             <a href="https://www.linkedin.com/in/angelo-guilhermino-736291109/" target="_blank" rel="noreferrer"                rel="noopener">
@@ -121,6 +122,27 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
           </div>
         </sub>
     </td>
+      <td align="center">
+      <a href="https://github.com/laryribeir0">
+        <img src="https://media.licdn.com/dms/image/D4D03AQFllma6Mhh-vw/profile-displayphoto-shrink_800_800/0/1675036474537?e=1680739200&v=beta&t=fl--WRmCaV26Q3tPj5UKqIACOAOuyA1yWCAopRE2tfY" width="110"/></a><br>
+        <sub>
+            <a href="https://media.licdn.com/dms/image/D4D03AQFllma6Mhh-vw/profile-displayphoto-shrink_800_800/0/1675036474537?e=1680739200&v=beta&t=fl--WRmCaV26Q3tPj5UKqIACOAOuyA1yWCAopRE2tfY" target="_blank" rel="noreferrer"                rel="noopener">
+              <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin"/> 
+            </a></br>
+          </div>
+        </sub>
+    </td>
+       <td align="center">
+      <a href="https://github.com/laryribeir0">
+        <img src="https://media.licdn.com/dms/image/D4D03AQFkOtvVQl9tEQ/profile-displayphoto-shrink_800_800/0/1675043694412?e=1680739200&v=beta&t=vNVBdUJmvtXPKXAWLinspJ2kDe4XqRtsmFvp5jm0xuA" width="110"/></a><br>
+        <sub>
+            <a href="https://www.linkedin.com/in/liedson-alves-100199235/" target="_blank" rel="noreferrer"                rel="noopener">
+              <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin"/> 
+            </a></br>
+          </div>
+        </sub>
+    </td>
+  
   </tr>
  </table>
 
