@@ -33,10 +33,6 @@ export class ProfessionalService {
     const URL = `${this.baseUrlDoctor}/${id}`;
     return this.http.get<Professional>(URL)
   }
-  deleteDoctorId(id: string): Observable<Professional>{
-    const URL = `${this.baseUrlDoctor}/${id}`;
-    return this.http.delete<Professional>(URL)
-  }
 
 
   createUserDoctor(userDoctor: UserDoctor): void {
