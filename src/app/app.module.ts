@@ -14,8 +14,15 @@ import { PepModule } from './pep/pep.module';
 import { AuthInterceptor } from './access/auth/authInterceptor';
 import { PatientModule } from './patient/patient.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { ProfessionalModule } from './professional/professional.module';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { NgChartsConfiguration, NgChartsModule } from 'ng2-charts';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -24,6 +31,7 @@ import { ProfessionalModule } from './professional/professional.module';
     BodyComponent,
     SidenavComponent,
     PepCreateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +42,13 @@ import { ProfessionalModule } from './professional/professional.module';
     PepModule,
     PatientModule,
     ProfessionalModule,
-    DashboardModule,
-    ProfessionalModule
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule,
+    NgChartsModule,
   ],
   
   providers: [
@@ -45,6 +58,7 @@ import { ProfessionalModule } from './professional/professional.module';
       multi: true
     },
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    { provide: NgChartsConfiguration, useValue: { generateColors: false }}
   ],
   bootstrap: [AppComponent]
 })
