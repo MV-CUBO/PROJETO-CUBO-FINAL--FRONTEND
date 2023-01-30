@@ -2,7 +2,6 @@ import { UpdatePatientComponent } from './patient/update-patient/update-patient.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './access/login/login.component';
-import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
