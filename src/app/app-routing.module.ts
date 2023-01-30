@@ -1,8 +1,8 @@
+import { UpdatePatientComponent } from './patient/update-patient/update-patient.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './access/login/login.component';
 import { AdminComponent } from './admin/admin.component';
-import { AppComponent } from './app.component';
 import { AuthGuard } from './access/auth/auth.guard';
 import { PatientComponent } from './patient/patient.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,27 +12,29 @@ import { CreateDoctorComponent } from './professional/professional-create/create
 import { CreatePatientComponent } from './patient/create-patient/create-patient.component';
 import { PepLogComponent } from './pep/pep-log/pep-log.component';
 import { ProfessionalListComponent } from './professional/professional-list/professional-list.component';
+import { UpdateProfessionalComponent } from './professional/update-professional/update-professional.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'admin',
-    component: AdminComponent,
+    component: DashboardComponent,
     canActivate: [AuthGuard],
     data: {
-      roles: ['ROLE_ADMIN']
-    }
-  },
-  { path: 'patient/pep', component: PepComponent },
-  {
-    path: 'admin/lista-pep',
+        roles: ['ROLE_ADMIN']
+      }
+    },
+    
+    { path: 'patient/pep', component: PepComponent },
+    {
+      path: 'admin/lista-pep',
     component: PepListComponent,
     canActivate: [AuthGuard],
     data: {
-      roles: ['ROLE_ADMIN']
-    }
-  },
+        roles: ['ROLE_ADMIN']
+      }
+    },
   {
     path: 'patient',
     component: PatientComponent,
@@ -41,6 +43,7 @@ const routes: Routes = [
       roles: ['ROLE_PATIENT']
     }
   },
+  { path: 'admin/dashboard', component: DashboardComponent},
   {
     path: 'admin/criar-profissional',
     component: CreateDoctorComponent,
@@ -60,6 +63,22 @@ const routes: Routes = [
   {
     path: 'admin/criar-paciente',
     component: CreatePatientComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  {
+    path: 'admin/atualizar-paciente/:id',
+    component: UpdatePatientComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: ['ROLE_ADMIN']
+    }
+  },
+  {
+    path: 'admin/atualizar-profissional/:id',
+    component: UpdateProfessionalComponent,
     canActivate: [AuthGuard],
     data: {
       roles: ['ROLE_ADMIN']

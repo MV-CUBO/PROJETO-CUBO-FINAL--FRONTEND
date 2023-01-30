@@ -63,5 +63,18 @@ export class ProfessionalService {
       });
   }
 
+  read(): Observable<Professional[]> {
+    return this.http.get<Professional[]>(this.baseUrlDoctor);
+  }
 
+  readById(id: string): Observable<Professional> {
+    const url = `${this.baseUrlDoctor}/${id}`
+    return this.http.get<Professional>(url);
+  }
+
+  update(professional: Professional): Observable<Professional> {
+    const url = `${this.baseUrlDoctor}/${professional.id}`
+    return this.http.put<Professional>(url, professional);
+  }
+  
 }

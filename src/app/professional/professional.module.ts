@@ -18,11 +18,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ProfessionalListComponent } from './professional-list/professional-list.component';
 import {MatIconModule} from '@angular/material/icon';
+import { UpdateProfessionalComponent } from './update-professional/update-professional.component';
+
 
 
 
 @NgModule({
-  declarations: [CreateDoctorComponent, ProfessionalListComponent],
+  declarations: [CreateDoctorComponent, UpdateProfessionalComponent, ProfessionalListComponent] ,
   imports: [
     CommonModule, 
     PatientRoutingModule,

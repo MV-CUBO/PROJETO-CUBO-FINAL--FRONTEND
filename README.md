@@ -89,6 +89,7 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
         <th><a href="https://mv.com.br"><strong> MV </strong><a></th>
 	<th><a href="https://github.com/RafaelTomas"><strong> Rafael Tomas </strong><a></th>
          <th><a href="https://github.com/0Guilhermino"><strong> Angelo Guilhermino </strong><a></th>
+         <th><a href="https://github.com/laryribeir0"><strong>Laryssa Ribeiro</strong><a><th>
   </tr>
     <td align="center">
       <a href="https://mv.com.br">
