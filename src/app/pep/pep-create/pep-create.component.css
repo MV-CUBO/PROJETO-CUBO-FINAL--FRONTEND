@@ -1,0 +1,16 @@
+.input-full-width {
+    width: 100%;
+    padding: 5px;
+  }
+
+button{
+    padding: .7rem .9rem ;
+    margin: 0 15px;
+    border-radius: 0px;
+    width: 36;
+    height: 10;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: Transparent;
+
+}

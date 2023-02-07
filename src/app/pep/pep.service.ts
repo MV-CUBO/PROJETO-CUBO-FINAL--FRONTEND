@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { Pep, PepLog } from './pep';
+import { Pep, PepCreate, PepLog } from './pep';
 
 export interface Person{
    name: string,
@@ -22,22 +22,26 @@ export class PepService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Pep[]> {
-    return this.http.get<Pep[]>(this.API)
+    return this.http.get<Pep[]>(this.API);
   }
 
   getPatientId(id: string): Observable<Person>{
     const URL = `${this.API_PATIENT}/${id}`;
-    return this.http.get<Person>(URL)
+    return this.http.get<Person>(URL);
   }
 
   getDoctorId(id: string): Observable<Person>{
     const URL = `${this.API_DOCTOR}/${id}`;
-    return this.http.get<Person>(URL)
+    return this.http.get<Person>(URL);
   }
 
   getPepId(id:string): Observable<Pep>{
     const URL = `${this.API}/${id}`;
-    return this.http.get<Pep>(URL)
+    return this.http.get<Pep>(URL);
+  }
+
+  createPep(pep: PepCreate): Observable<PepCreate> {
+    return this.http.post<PepCreate>(this.API, pep);
   }
 
   getAllLogs(): Observable<PepLog[]>{
